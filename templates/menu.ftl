@@ -12,7 +12,13 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>index.html">Home</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Java Fundamentals<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Java Basic Syntax</a></li>
+                <li><a href="#">Data Types and variables</a></li>                
+              </ul>
+            </li>
             <li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>about.html">About</a></li>
             <li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>${config.feed_file}">Subscribe</a></li>
             <li class="dropdown">

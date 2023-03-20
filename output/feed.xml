@@ -6,27 +6,79 @@
     <atom:link href="http://localhost:8820//feed.xml" rel="self" type="application/rss+xml" />
     <description>JBake Bootstrap Template</description>
     <language>en-gb</language>
-    <pubDate>Mon, 20 Mar 2023 17:32:03 +0200</pubDate>
-    <lastBuildDate>Mon, 20 Mar 2023 17:32:03 +0200</lastBuildDate>
+    <pubDate>Mon, 20 Mar 2023 17:39:36 +0200</pubDate>
+    <lastBuildDate>Mon, 20 Mar 2023 17:39:36 +0200</lastBuildDate>
 
     <item>
-      <title>Java Fundamentals</title>
-      <link>http://localhost:8820//java-jottings/Java+Fundamentals.html</link>
-      <pubDate>Mon, 20 Mar 2023 17:27:24 +0200</pubDate>
-      <guid isPermaLink="false">java-jottings/Java+Fundamentals.html</guid>
+      <title>Java Basic Syntax</title>
+      <link>http://localhost:8820//java-jottings/Java Fundamentals/Java+Basic+Syntax.html</link>
+      <pubDate>Mon, 20 Mar 2023 17:38:47 +0200</pubDate>
+      <guid isPermaLink="false">java-jottings/Java Fundamentals/Java+Basic+Syntax.html</guid>
       	<description>
-	&lt;ul&gt;
-&lt;li&gt;Java is an  Objected-Oriented Programming.&lt;/li&gt;
-&lt;li&gt;Java is platform-independent.&lt;/li&gt;
-&lt;li&gt;Java is a strongly-typed language.&lt;/li&gt;
-&lt;li&gt;The main Method is the entry point of a Java program.&lt;/li&gt;
-&lt;li&gt;Java Basic Syntax&lt;/li&gt;
-&lt;li&gt;Inheritance allows a subclass to inherit the fields and methods of a superclass.&lt;/li&gt;
-&lt;li&gt;Polymorphism allows objects to be treated as instances of their superclass or any of their subclasses.&lt;/li&gt;
-&lt;li&gt;Encapsulation is the process of hiding the implementation details of an object.&lt;/li&gt;
-&lt;li&gt;Abstraction is the process of identifying the essential characteristics of an object and ignoring the irrelevant details.&lt;/li&gt;
-&lt;li&gt;Exception handling is used to handle errors that occur during the execution of a program.&lt;/li&gt;
-&lt;/ul&gt;
+	&lt;p&gt;Java programs are organized into [[Classes]], which are defined using the &lt;code&gt;class&lt;/code&gt; keyword. For example, the following code defines a class named &lt;code&gt;MyClass&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;public class MyClass { 
+// code descibring MyClass behaviour and states goes here 
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Each class can have one or more methods, which define the behaviour of the class. Methods are defined using the &lt;code&gt;public&lt;/code&gt; keyword (which indicates that the method can be accessed from outside the class), followed by the return type of the method, followed by the method name and its parameters.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;public int add(int a, int b) {
+    return a + b;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Java is a strongly-typed language, which means that all variables and expressions have a specific type. Types can be primitive (like &lt;code&gt;int&lt;/code&gt; or &lt;code&gt;boolean&lt;/code&gt;) or reference types (like &lt;code&gt;String&lt;/code&gt; or &lt;code&gt;Object&lt;/code&gt;).&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;int x = 10;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Java supports a wide range of control structures, including &lt;code&gt;if&lt;/code&gt; statements, &lt;code&gt;for&lt;/code&gt; loops, &lt;code&gt;while&lt;/code&gt; loops, and &lt;code&gt;switch&lt;/code&gt; statements.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;if (x &amp;gt; y) { 
+	System.out.println(&amp;quot;x is greater than y&amp;quot;); 
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Java supports [[Objected-Oriented Programming]], which means that classes can inherit behaviour and data from other classes, and can override methods to provide customized behaviour. For example, the following code defines a subclass named &lt;code&gt;ChildClass&lt;/code&gt; that extends a superclass named &lt;code&gt;ParentClass&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;class Animal {
+    public void speak() {
+        System.out.println(&amp;quot;The animal makes a sound.&amp;quot;);
+    }
+}
+
+class Dog extends Animal {
+    public void speak() {
+        System.out.println(&amp;quot;The dog says woof!&amp;quot;);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Animal myAnimal = new Animal();
+        myAnimal.speak();
+        
+        Dog myDog = new Dog();
+        myDog.speak();
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+	</description>
+    </item>
+    <item>
+      <title>Java Data Types and Variables</title>
+      <link>http://localhost:8820//java-jottings/Java Fundamentals/Data+Types+and+Variables.html</link>
+      <pubDate>Mon, 20 Mar 2023 17:38:32 +0200</pubDate>
+      <guid isPermaLink="false">java-jottings/Java Fundamentals/Data+Types+and+Variables.html</guid>
+      	<description>
+	&lt;p&gt;Java is a strongly-typed language, which means that all variables must have a declared data type. Variables are used to store values in memory. In Java, you declare a variable by specifying its data type and name.&lt;/p&gt;
+&lt;h3&gt;Primitive vs Non-Primitive&lt;/h3&gt;
+&lt;p&gt;Java has two categories of data types: primitive types and reference types.&lt;/p&gt;
+&lt;h4&gt;Primitive&lt;/h4&gt;
+&lt;p&gt;Primitive types are built-in types that represent simple values, such as int, float, double, bool and char.&lt;/p&gt;
+&lt;h4&gt;Non-Primitive or Reference&lt;/h4&gt;
+&lt;p&gt;Reference types are more complex types that represent Objects, such as Strings, arrays and user-defined classes.&lt;/p&gt;
+&lt;h3&gt;Initialization&lt;/h3&gt;
+&lt;p&gt;Variables can be initialized with a value when they are declared, or they can be assigned a value later in the program.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;int num1 = 10; // declare and initialize an integer variable
+double num2; // declare a double variable
+num2 = 3.14; // assign a value to the double variable
+String name = &amp;quot;John&amp;quot;; // declare and initialize a string variable
+&lt;/code&gt;&lt;/pre&gt;
 
 	</description>
     </item>
