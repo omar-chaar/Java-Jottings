@@ -6,14 +6,14 @@
     <atom:link href="http://localhost:8820//feed.xml" rel="self" type="application/rss+xml" />
     <description>JBake Bootstrap Template</description>
     <language>en-gb</language>
-    <pubDate>Tue, 21 Mar 2023 16:43:46 +0200</pubDate>
-    <lastBuildDate>Tue, 21 Mar 2023 16:43:46 +0200</lastBuildDate>
+    <pubDate>Tue, 21 Mar 2023 16:56:59 +0200</pubDate>
+    <lastBuildDate>Tue, 21 Mar 2023 16:56:59 +0200</lastBuildDate>
 
     <item>
       <title>Java Basic Syntax</title>
-      <link>http://localhost:8820//java-jottings/Java Fundamentals/Java+Basic+Syntax.html</link>
+      <link>http://localhost:8820//java-jottings/java-fundamentals/java-basic-syntax.html</link>
       <pubDate>Mon, 20 Mar 2023 17:38:47 +0200</pubDate>
-      <guid isPermaLink="false">java-jottings/Java Fundamentals/Java+Basic+Syntax.html</guid>
+      <guid isPermaLink="false">java-jottings/java-fundamentals/java-basic-syntax.html</guid>
       	<description>
 	&lt;p&gt;Java programs are organized into [[Classes]], which are defined using the &lt;code&gt;class&lt;/code&gt; keyword. For example, the following code defines a class named &lt;code&gt;MyClass&lt;/code&gt;:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;public class MyClass { 
@@ -61,9 +61,9 @@ public class Main {
     </item>
     <item>
       <title>Java Data Types and Variables</title>
-      <link>http://localhost:8820//java-jottings/Java Fundamentals/Data+Types+and+Variables.html</link>
+      <link>http://localhost:8820//java-jottings/java-fundamentals/data-types-and-variables.html</link>
       <pubDate>Mon, 20 Mar 2023 17:38:32 +0200</pubDate>
-      <guid isPermaLink="false">java-jottings/Java Fundamentals/Data+Types+and+Variables.html</guid>
+      <guid isPermaLink="false">java-jottings/java-fundamentals/data-types-and-variables.html</guid>
       	<description>
 	&lt;p&gt;Java is a strongly-typed language, which means that all variables must have a declared data type. Variables are used to store values in memory. In Java, you declare a variable by specifying its data type and name.&lt;/p&gt;
 &lt;h3&gt;Primitive vs Non-Primitive&lt;/h3&gt;
