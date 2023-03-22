@@ -3,7 +3,7 @@
 	<#include "menu.ftl">
 
 	<div class="page-header">
-		<h1>Latest Posts</h1>
+		<h1>Latest Notes</h1>
 	</div>
 	<#list posts as post>
   		<#if (post.status == "published")>
