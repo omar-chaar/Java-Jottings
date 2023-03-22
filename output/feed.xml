@@ -6,18 +6,18 @@
     <atom:link href="http://localhost:8820//feed.xml" rel="self" type="application/rss+xml" />
     <description>JBake Bootstrap Template</description>
     <language>en-gb</language>
-    <pubDate>Wed, 22 Mar 2023 12:10:06 +0200</pubDate>
-    <lastBuildDate>Wed, 22 Mar 2023 12:10:06 +0200</lastBuildDate>
+    <pubDate>Wed, 22 Mar 2023 12:11:59 +0200</pubDate>
+    <lastBuildDate>Wed, 22 Mar 2023 12:11:59 +0200</lastBuildDate>
 
     <item>
       <title>Java Basic Syntax</title>
       <link>http://localhost:8820//java-jottings/java-fundamentals/java-basic-syntax.html</link>
-      <pubDate>Wed, 22 Mar 2023 12:08:23 +0200</pubDate>
+      <pubDate>Wed, 22 Mar 2023 12:11:58 +0200</pubDate>
       <guid isPermaLink="false">java-jottings/java-fundamentals/java-basic-syntax.html</guid>
       	<description>
 	&lt;p&gt;Java programs are organized into Classes, which are defined using the &lt;code&gt;class&lt;/code&gt; keyword. For example, the following code defines a class named &lt;code&gt;MyClass&lt;/code&gt;:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;public class MyClass { 
-// code descibring MyClass behaviour and states goes here 
+// code describing MyClass behaviour and states goes here 
 }
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Each class can have one or more methods, which define the behaviour of the class. Methods are defined using the &lt;code&gt;public&lt;/code&gt; keyword (which indicates that the method can be accessed from outside the class), followed by the return type of the method, followed by the method name and its parameters.&lt;/p&gt;

@@ -7,7 +7,7 @@ Java programs are organized into Classes, which are defined using the `class` ke
 
 ```java
 public class MyClass { 
-// code descibring MyClass behaviour and states goes here 
+// code describing MyClass behaviour and states goes here 
 }
 ```
 
