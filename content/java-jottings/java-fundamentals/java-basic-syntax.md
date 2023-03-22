@@ -1,6 +1,7 @@
 title=Java Basic Syntax
 type=post
 status=published
+group=java-fundamentals
 ~~~~~~
 
 Java programs are organized into Classes, which are defined using the `class` keyword. For example, the following code defines a class named `MyClass`:

@@ -1,6 +1,7 @@
 title=Java Data Types and Variables
 type=post
 status=published
+group=java-fundamentals
 ~~~~~~
 
 Java is a strongly-typed language, which means that all variables must have a declared data type. Variables are used to store values in memory. In Java, you declare a variable by specifying its data type and name.
