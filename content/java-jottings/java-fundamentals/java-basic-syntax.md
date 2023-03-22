@@ -3,7 +3,7 @@ type=post
 status=published
 ~~~~~~
 
-Java programs are organized into [[Classes]], which are defined using the `class` keyword. For example, the following code defines a class named `MyClass`:
+Java programs are organized into Classes, which are defined using the `class` keyword. For example, the following code defines a class named `MyClass`:
 
 ```java
 public class MyClass { 
@@ -34,7 +34,7 @@ if (x > y) {
 ```
 
 
-Java supports [[Objected-Oriented Programming]], which means that classes can inherit behaviour and data from other classes, and can override methods to provide customized behaviour. For example, the following code defines a subclass named `ChildClass` that extends a superclass named `ParentClass`:
+Java supports Objected-Oriented Programming, which means that classes can inherit behaviour and data from other classes, and can override methods to provide customized behaviour. For example, the following code defines a subclass named `ChildClass` that extends a superclass named `ParentClass`:
 
 ```java
 class Animal {
