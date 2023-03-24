@@ -7,7 +7,7 @@ import java.io.File;
 public class Runner {
     public static void main(String [] args){
         try {
-            File source = new File("src/jbake-source/");
+            File source = new File("src/jbake-source");
             File destination = new File("src/output");
             Oven oven = new Oven(source, destination, true);
             oven.setupPaths();
