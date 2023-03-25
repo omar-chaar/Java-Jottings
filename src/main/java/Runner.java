@@ -7,16 +7,15 @@ import java.io.File;
 public class Runner {
     public static void main(String [] args){
         try {
-            File source = new File("src/jbake-source");
+            File source = new File("src");
             File destination = new File("src/output");
             Oven oven = new Oven(source, destination, true);
             oven.setupPaths();
-            oven.bake();
+           oven.bake();
         } catch (ConfigurationException e) {
             System.out.println(e.getMessage());
         } catch (JBakeException e) {
             System.out.println(e.getMessage());
-            // do something with exception here
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
