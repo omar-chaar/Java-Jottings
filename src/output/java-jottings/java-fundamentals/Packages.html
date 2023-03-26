@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Packages</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta name="generator" content="Java-Jottings">
+
+    <!-- Le styles -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/asciidoctor.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <link href="../../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" href="../../favicon.ico">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+	
+	<!-- Fixed navbar -->
+	<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="
+				../../
+				">Java Jottings</a>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Java Fundamentals<b class="caret"></b></a>
+						<ul class="dropdown-menu">
+									<li><a href="java-jottings/java-fundamentals/Packages.html">
+											Packages
+										</a>
+									<li><a href="java-jottings/java-fundamentals/using-file-apis.html">
+											Using File APIs
+										</a>
+									<li><a href="java-jottings/java-fundamentals/data-types-and-variables.html">
+											Java Data Types and Variables
+										</a>
+									<li><a href="java-jottings/java-fundamentals/java-basic-syntax.html">
+											Java Basic Syntax
+										</a>
+						</ul>
+					</li>
+					<li><a href="
+					../../
+					about.html">About</a></li>
+				</ul>
+			</div>
+			<!--/.nav-collapse -->
+		</div>
+	</div>
+	<div class="container">
+	<div class="page-header">
+		<h1>Packages</h1>
+	</div>
+
+	<p><p><strong>java package</strong> is a group of similar types of classes, interfaces and sub-packages.</p>
+<h2>Syntax</h2>
+<p>Creating a package</p>
+<pre><code class="language-java">package com.example.myapp;
+</code></pre>
+<p>Compiling a package</p>
+<pre><code class="language-sh">javac -d directory javafilename
+</code></pre>
+<p>Importing a package</p>
+<pre><code class="language-java">package thisPackage;
+import com.example.myapp;
+
+public Class{
+</code></pre>
+<p>If you import a package, all the classes and interface of that package will be imported excluding the classes and interfaces of the subpackages. Hence, you need to import the subpackage as well.</p>
+<h3>Default Package</h3>
+<p>If you do not specify a package for your classes, they will be placed in the default package. However, it is recommended to always use packages to avoid naming conflicts and make your code easier to manage.</p>
+<h3>Package Naming Conventions</h3>
+<p>Package names in Java follow the reverse domain name convention. For example, if a company owns the domain name example.com, they would use the following package name:</p>
+<pre><code class="language-java">package com.example.myapp;
+</code></pre>
+<h2>Package-level Annotations</h2>
+<p>Java also allows you to add annotations at the package level. These annotations apply to all classes and interfaces in the package. For example:</p>
+<pre><code class="language-java">@Deprecated 
+package com.example.myapp;
+</code></pre>
+<p>This marks the entire package as deprecated, and any usage of classes or interfaces within the package will generate a warning.</p>
+</p>
+
+	<hr />
+	
+		</div>
+		<div id="push"></div>
+    </div>
+    
+    <div id="footer">
+      <div class="container">
+        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake </a></p>
+      </div>
+    </div>
+    
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../js/jquery-1.11.1.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/prettify.js"></script>
+    
+  </body>
+</html>
