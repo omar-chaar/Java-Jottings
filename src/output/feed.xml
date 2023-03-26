@@ -6,9 +6,165 @@
     <atom:link href="http://jbake.org/feed.xml" rel="self" type="application/rss+xml" />
     <description>JBake Bootstrap Template</description>
     <language>en-gb</language>
-    <pubDate>Sat, 25 Mar 2023 20:26:56 +0200</pubDate>
-    <lastBuildDate>Sat, 25 Mar 2023 20:26:56 +0200</lastBuildDate>
+    <pubDate>Sun, 26 Mar 2023 15:26:45 +0300</pubDate>
+    <lastBuildDate>Sun, 26 Mar 2023 15:26:45 +0300</lastBuildDate>
 
+    <item>
+      <title>Packages</title>
+      <link>http://jbake.org/java-jottings/java-fundamentals/Packages.html</link>
+      <pubDate>Sun, 26 Mar 2023 15:26:05 +0300</pubDate>
+      <guid isPermaLink="false">java-jottings/java-fundamentals/Packages.html</guid>
+      	<description>
+	&lt;p&gt;&lt;strong&gt;java package&lt;/strong&gt; is a group of similar types of classes, interfaces and sub-packages.&lt;/p&gt;
+&lt;h2&gt;Syntax&lt;/h2&gt;
+&lt;p&gt;Creating a package&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;package com.example.myapp;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Compiling a package&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-sh&quot;&gt;javac -d directory javafilename
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Importing a package&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;package thisPackage;
+import com.example.myapp;
+
+public Class{
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;If you import a package, all the classes and interface of that package will be imported excluding the classes and interfaces of the subpackages. Hence, you need to import the subpackage as well.&lt;/p&gt;
+&lt;h3&gt;Default Package&lt;/h3&gt;
+&lt;p&gt;If you do not specify a package for your classes, they will be placed in the default package. However, it is recommended to always use packages to avoid naming conflicts and make your code easier to manage.&lt;/p&gt;
+&lt;h3&gt;Package Naming Conventions&lt;/h3&gt;
+&lt;p&gt;Package names in Java follow the reverse domain name convention. For example, if a company owns the domain name example.com, they would use the following package name:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;package com.example.myapp;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;Package-level Annotations&lt;/h2&gt;
+&lt;p&gt;Java also allows you to add annotations at the package level. These annotations apply to all classes and interfaces in the package. For example:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;@Deprecated 
+package com.example.myapp;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This marks the entire package as deprecated, and any usage of classes or interfaces within the package will generate a warning.&lt;/p&gt;
+
+	</description>
+    </item>
+    <item>
+      <title>Using File APIs</title>
+      <link>http://jbake.org/java-jottings/java-fundamentals/using-file-apis.html</link>
+      <pubDate>Sun, 26 Mar 2023 15:25:55 +0300</pubDate>
+      <guid isPermaLink="false">java-jottings/java-fundamentals/using-file-apis.html</guid>
+      	<description>
+	&lt;h2&gt;Sample Code&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
+import java.util.List; 
+
+public class App {
+    public static void main(String[] args) throws Exception {
+        //Writing files 
+		String text = &amp;quot;This is a test&amp;quot;;
+        try{
+            Files.write(Paths.get(&amp;quot;file.txt&amp;quot;), text.getBytes(), StandardOpenOption.CREATE);
+            System.out.println(&amp;quot;File wrote successfully&amp;quot;);
+        } catch (IOException exception){
+            System.out.println(&amp;quot;it wasn&apos;t possible to write the file&amp;quot;);
+        }
+        
+        //Reading files
+        try{
+            List&amp;lt;String&amp;gt; textRead = Files.readAllLines(Paths.get(&amp;quot;file.txt&amp;quot;));
+            for(String line: textRead)
+                System.out.println(line);
+		} catch (IOException exception){
+            System.out.println(&amp;quot;it wasn&apos;t possible to read the file&amp;quot;);
+        } 
+        //Manipulating Paths
+        Path path = Paths.get(&amp;quot;.&amp;quot;,&amp;quot;file.txt&amp;quot;);
+        
+        //Deleting
+        try{
+	        Files.delete(path);
+        }catch (IOException exception){
+            System.out.println(&amp;quot;it wasn&apos;t possible to delete the file&amp;quot;);
+        }     
+	}
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;&lt;code&gt;java.io.File&lt;/code&gt; vs &lt;code&gt;java.nio.file.Path&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;Java has two file APIs.&lt;br /&gt;
+- The original &lt;code&gt;java.io.File&lt;/code&gt; API, available since Java 1.0 (1996).&lt;br /&gt;
+- The newer &lt;code&gt;java.nio.file.Path&lt;/code&gt; API, available since Java 1.7 (2011).&lt;/p&gt;
+&lt;h2&gt;File vs Path API&lt;/h2&gt;
+&lt;p&gt;Nevertheless, &lt;code&gt;java.nio.file.Path&lt;/code&gt; does everything &lt;code&gt;java.io.File&lt;/code&gt; can, but generally in a better way and more. A few examples:&lt;br /&gt;
+- File Features: The new classes support symlinks, proper file attributes and metadata support (think: PosixFileAttributes), ACLs and more.&lt;br /&gt;
+- Better usage: E.g. when deleting a file, you get an exception with a meaningful error message (no such file, file locked, etc.), instead of a simple boolean saying &lt;code&gt;false&lt;/code&gt;.&lt;br /&gt;
+- Decoupling: Enabling support for in-memory file systems, which we’ll cover later.&lt;/p&gt;
+&lt;h3&gt;Reading Files&lt;/h3&gt;
+&lt;p&gt;To read the contents of a file in Java, you can use the &lt;code&gt;java.nio.file.Files&lt;/code&gt; class, which provides a number of static methods for working with files. The most common method for reading a file is &lt;code&gt;readAllLines&lt;/code&gt;, which reads all the lines in a file and returns them as a list of strings:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.List;
+
+public class ReadFileExample {
+    public static void main(String[] args) throws Exception {
+        List&amp;lt;String&amp;gt; lines = Files.readAllLines(Paths.get(&amp;quot;folder\\file.txt&amp;quot;));
+        for (String line : lines) {
+            System.out.println(line);
+        }
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;Writing Files&lt;/h3&gt;
+&lt;p&gt;To write to a file in Java, you can use the &lt;code&gt;java.nio.file.Files&lt;/code&gt; class again, this time with the &lt;code&gt;write&lt;/code&gt; method:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
+
+public class WriteFileExample {
+    public static void main(String[] args) throws Exception {
+        String text = &amp;quot;Hello, world!&amp;quot;;
+        Files.write(Paths.get(&amp;quot;folder\\file.txt&amp;quot;), text.getBytes(), StandardOpenOption.CREATE);
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;Deleting Files and Directories&lt;/h3&gt;
+&lt;p&gt;To delete a file in Java, you can use the &lt;code&gt;java.nio.file.Files&lt;/code&gt; class with the &lt;code&gt;delete&lt;/code&gt; method:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;import java.nio.file.Files;
+import java.nio.file.Paths;
+
+public class DeleteFileExample {
+    public static void main(String[] args) throws Exception {
+        Files.delete(Paths.get(&amp;quot;folder\\file.txt&amp;quot;));
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;To delete a directory, you can use the &lt;code&gt;java.nio.file.Files&lt;/code&gt; class again, this time with the &lt;code&gt;delete&lt;/code&gt; method and a directory path:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;import java.nio.file.Files;
+import java.nio.file.Paths;
+
+public class DeleteDirectoryExample {
+    public static void main(String[] args) throws Exception {
+        Files.delete(Paths.get(&amp;quot;folder&amp;quot;));
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;Manipulating Paths&lt;/h3&gt;
+&lt;p&gt;When working with files and directories, you often need to manipulate paths. Java provides the &lt;code&gt;java.nio.file.Path&lt;/code&gt; interface for working with paths. You can create a path using the &lt;code&gt;Paths.get&lt;/code&gt; method:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;import java.nio.file.Path;
+import java.nio.file.Paths;
+
+public class PathExample {
+    public static void main(String[] args) throws Exception {
+        Path path = Paths.get(&amp;quot;directory&amp;quot;, &amp;quot;file.txt&amp;quot;);
+        System.out.println(path.toString());
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;Best Practices&lt;/h3&gt;
+&lt;p&gt;When working with files in Java, it is important to properly handle exceptions and close files when you are done with them. It is also a good practice to use try-with-resources statements to automatically close files, and to use appropriate file permissions to ensure the security of your files.&lt;/p&gt;
+
+	</description>
+    </item>
     <item>
       <title>Java Data Types and Variables</title>
       <link>http://jbake.org/java-jottings/java-fundamentals/data-types-and-variables.html</link>
