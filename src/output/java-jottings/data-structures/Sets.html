@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Sets</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta name="generator" content="Java-Jottings">
+
+    <!-- Le styles -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/asciidoctor.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <link href="../../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" href="../../favicon.ico">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+	
+	<!-- Fixed navbar -->
+	<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="
+				../../
+				">Java Jottings</a>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Java Fundamentals<b class="caret"></b></a>
+						<ul class="dropdown-menu">
+									<li><a href="java-jottings/java-fundamentals/main+Method.html">
+											main Method
+										</a>
+									<li><a href="java-jottings/data-structures/Stacks.html">
+											Stacks
+										</a>
+									<li><a href="java-jottings/java-fundamentals/Packages.html">
+											Packages
+										</a>
+									<li><a href="java-jottings/java-fundamentals/data-types-and-variables.html">
+											Java Data Types and Variables
+										</a>
+									<li><a href="java-jottings/java-fundamentals/using-file-apis.html">
+											Using File APIs
+										</a>
+									<li><a href="java-jottings/java-fundamentals/java-basic-syntax.html">
+											Java Basic Syntax
+										</a>
+						</ul>						
+					</li>
+					 <li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Data Structures<b class="caret"></b></a>
+						<ul class="dropdown-menu">
+									<li><a href="java-jottings/data-structures/Sets.html">
+											Sets
+										</a>
+									<li><a href="java-jottings/data-structures/Linked+List.html">
+											Linked List
+										</a>
+						</ul>
+					</li>
+					<li><a href="
+					../../
+					about.html">About</a></li>
+				</ul>
+			</div>
+			<!--/.nav-collapse -->
+		</div>
+	</div>
+	<div class="container">
+	<div class="page-header">
+		<h1>Sets</h1>
+	</div>
+
+	<p><p>A set is a collection of elements that contains no duplicates. In Java, sets are represented by the <code>Set</code> interface and implemented by several classes, including <code>HashSet</code>, <code>LinkedHashSet</code>, and <code>TreeSet</code>.</p>
+<h2>Creating a Set</h2>
+<p>To create a set in Java, you first need to declare the set and specify the type of elements it will contain. For example:</p>
+<pre><code class="language-java">Set&lt;String&gt; mySet = new HashSet&lt;String&gt;();
+</code></pre>
+<h2>Adding elements to a set</h2>
+<p>To add an element to a set, you can use the <code>add</code> method:</p>
+<pre><code class="language-java">mySet.add(&quot;apple&quot;);
+</code></pre>
+<h2>Removing elements from a set</h2>
+<p>To remove an element from a set, you can use the <code>remove</code> method:</p>
+<pre><code class="language-java">mySet.remove(&quot;apple&quot;);
+</code></pre>
+<p>This will remove the string &quot;apple&quot; from the set.</p>
+<h2>Checking if an Element is in a Set</h2>
+<p>To check if a set contains a specific element, you can use the <code>contains</code> method:</p>
+<pre><code class="language-java">if (mySet.contains(&quot;apple&quot;)) {
+    System.out.println(&quot;The set contains an apple.&quot;);
+} else {
+    System.out.println(&quot;The set does not contain an apple.&quot;);
+}
+</code></pre>
+<h2>Iterating Through a Set</h2>
+<p>To iterate through the elements of a set, you can use a for-each loop:</p>
+<pre><code class="language-java">for (String element : mySet) {
+    System.out.println(element);
+}
+</code></pre>
+<p>This will print each element in the set on a separate line.</p>
+<h3>Best Practices</h3>
+<p>Here are some best practices to keep in mind when working with Sets in Java:</p>
+<ul>
+<li>Use the appropriate Set implementation for your needs. HashSet is usually the fastest, but if you need to maintain the order of the elements, consider using TreeSet or LinkedHashSet.</li>
+<li>Use the <code>contains()</code> method to check if an element is in a Set before adding it. This will prevent duplicates.</li>
+<li>Use the for-each loop to iterate over the elements of a Set. It is simpler and less error-prone than using an iterator.</li>
+<li>Consider using the <code>addAll()</code> method to add all elements from one set to another.</li>
+<li>When using a custom class as the type parameter for a Set, make sure to implement the <code>equals()</code> and <code>hashCode()</code> methods correctly to ensure proper functioning of the Set.</li>
+</ul>
+</p>
+
+	<hr />
+	
+		</div>
+		<div id="push"></div>
+    </div>
+    
+    <div id="footer">
+      <div class="container">
+        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake </a></p>
+      </div>
+    </div>
+    
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../js/jquery-1.11.1.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/prettify.js"></script>
+    
+  </body>
+</html>
