@@ -24,6 +24,18 @@
 										</a>
 								</#if>
 							</#list>
+						</ul>						
+					</li>
+					 <li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Data Structures<b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<#list posts as post>
+								<#if (post.group=="data-structures" )>
+									<li><a href="${post.uri}">
+											${post.title}
+										</a>
+								</#if>
+							</#list>
 						</ul>
 					</li>
 					<li><a href="<#if (content.rootpath)??>
