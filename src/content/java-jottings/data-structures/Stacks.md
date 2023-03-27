@@ -1,7 +1,7 @@
 title=Stacks
 type=post
 status=published
-group=java-fundamentals
+group=data-structures
 ~~~~~~
 
 There are several advantages of using a stack data structure:
