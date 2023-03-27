@@ -3,6 +3,7 @@ type=post
 status=published
 group=java-fundamentals
 ~~~~~~
+
 **java package** is a group of similar types of classes, interfaces and sub-packages.
 
 ## Syntax
