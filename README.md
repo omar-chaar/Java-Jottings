@@ -19,7 +19,7 @@ To build Java Jottings, follow these steps:
 
 1. Open a terminal or command prompt.
 
-2. Navigate to the root directory of the project.
+2. Navigate to the src directory of the project.
 
 3. Run the following command to build the project:
 
