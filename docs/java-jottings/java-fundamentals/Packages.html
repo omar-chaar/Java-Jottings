@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>Java Basic Syntax</title>
+    <title>Packages</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -90,50 +90,36 @@
 	</div>
 	<div class="container">
 	<div class="page-header">
-		<h1>Java Basic Syntax</h1>
+		<h1>Packages</h1>
 	</div>
 
-	<p><p>Java programs are organized into Classes, which are defined using the <code>class</code> keyword. For example, the following code defines a class named <code>MyClass</code>:</p>
-<pre><code class="language-java">public class MyClass { 
-// code describing MyClass behaviour and states goes here 
-}
+	<p><p><strong>java package</strong> is a group of similar types of classes, interfaces and sub-packages.</p>
+<h2>Syntax</h2>
+<p>Creating a package</p>
+<pre><code class="language-java">package com.example.myapp;
 </code></pre>
-<p>Each class can have one or more methods, which define the behaviour of the class. Methods are defined using the <code>public</code> keyword (which indicates that the method can be accessed from outside the class), followed by the return type of the method, followed by the method name and its parameters.</p>
-<pre><code class="language-java">public int add(int a, int b) {
-    return a + b;
-}
+<p>Compiling a package</p>
+<pre><code class="language-sh">javac -d directory javafilename
 </code></pre>
-<p>Java is a strongly-typed language, which means that all variables and expressions have a specific type. Types can be primitive (like <code>int</code> or <code>boolean</code>) or reference types (like <code>String</code> or <code>Object</code>).</p>
-<pre><code class="language-java">int x = 10;
-</code></pre>
-<p>Java supports a wide range of control structures, including <code>if</code> statements, <code>for</code> loops, <code>while</code> loops, and <code>switch</code> statements.</p>
-<pre><code class="language-java">if (x &gt; y) { 
-	System.out.println(&quot;x is greater than y&quot;); 
-}
-</code></pre>
-<p>Java supports Objected-Oriented Programming, which means that classes can inherit behaviour and data from other classes, and can override methods to provide customized behaviour. For example, the following code defines a subclass named <code>ChildClass</code> that extends a superclass named <code>ParentClass</code>:</p>
-<pre><code class="language-java">class Animal {
-    public void speak() {
-        System.out.println(&quot;The animal makes a sound.&quot;);
-    }
-}
+<p>Importing a package</p>
+<pre><code class="language-java">package thisPackage;
+import com.example.myapp;
 
-class Dog extends Animal {
-    public void speak() {
-        System.out.println(&quot;The dog says woof!&quot;);
-    }
-}
-
-public class Main {
-    public static void main(String[] args) {
-        Animal myAnimal = new Animal();
-        myAnimal.speak();
-        
-        Dog myDog = new Dog();
-        myDog.speak();
-    }
-}
+public Class{
 </code></pre>
+<p>If you import a package, all the classes and interface of that package will be imported excluding the classes and interfaces of the subpackages. Hence, you need to import the subpackage as well.</p>
+<h3>Default Package</h3>
+<p>If you do not specify a package for your classes, they will be placed in the default package. However, it is recommended to always use packages to avoid naming conflicts and make your code easier to manage.</p>
+<h3>Package Naming Conventions</h3>
+<p>Package names in Java follow the reverse domain name convention. For example, if a company owns the domain name example.com, they would use the following package name:</p>
+<pre><code class="language-java">package com.example.myapp;
+</code></pre>
+<h2>Package-level Annotations</h2>
+<p>Java also allows you to add annotations at the package level. These annotations apply to all classes and interfaces in the package. For example:</p>
+<pre><code class="language-java">@Deprecated 
+package com.example.myapp;
+</code></pre>
+<p>This marks the entire package as deprecated, and any usage of classes or interfaces within the package will generate a warning.</p>
 </p>
 
 	<hr />

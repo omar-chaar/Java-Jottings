@@ -2,17 +2,238 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>JBake</title>
-    <link>http://jbake.org</link>
-    <atom:link href="http://jbake.org/feed.xml" rel="self" type="application/rss+xml" />
+    <link>http://localhost:8820/</link>
+    <atom:link href="http://localhost:8820//feed.xml" rel="self" type="application/rss+xml" />
     <description>JBake Bootstrap Template</description>
     <language>en-gb</language>
-    <pubDate>Sat, 25 Mar 2023 20:26:56 +0200</pubDate>
-    <lastBuildDate>Sat, 25 Mar 2023 20:26:56 +0200</lastBuildDate>
+    <pubDate>Mon, 27 Mar 2023 12:30:57 +0300</pubDate>
+    <lastBuildDate>Mon, 27 Mar 2023 12:30:57 +0300</lastBuildDate>
 
     <item>
+      <title>Linked List</title>
+      <link>http://localhost:8820//java-jottings/data-structures/Linked+List.html</link>
+      <pubDate>Mon, 27 Mar 2023 12:30:56 +0300</pubDate>
+      <guid isPermaLink="false">java-jottings/data-structures/Linked+List.html</guid>
+      	<description>
+	&lt;ul&gt;
+&lt;li&gt;Linked list is a dynamic data structure in which the elements are not stored at contiguous memory locations.&lt;/li&gt;
+&lt;li&gt;In a linked list, each node contains a data element and a reference (link) to the next node in the sequence.&lt;/li&gt;
+&lt;li&gt;A linked list can be singly-linked (each node only has a reference to the next node) or doubly-linked (each node has a reference to both the next and previous nodes).&lt;/li&gt;
+&lt;li&gt;Unlike arrays, linked lists do not have a fixed size and can grow and shrink on demand.&lt;/li&gt;
+&lt;li&gt;Insertion and deletion of elements at the beginning or end of a linked list are efficient operations with O(1) time complexity.&lt;/li&gt;
+&lt;li&gt;However, accessing an element at a specific index in a linked list requires traversing the list from the beginning until the desired index is reached, resulting in a time complexity of O(n).&lt;/li&gt;
+&lt;li&gt;Java provides a built-in implementation of linked lists through the LinkedList class in the java.util package.&lt;/li&gt;
+&lt;li&gt;The LinkedList class provides methods for adding, removing, and accessing elements in the list, as well as methods for iterating over the elements in the list.&lt;/li&gt;
+&lt;li&gt;However, the LinkedList class is not thread-safe, and concurrent modifications to the list can lead to undefined behavior.&lt;/li&gt;
+&lt;li&gt;If thread safety is required, the java.util.concurrent package provides a thread-safe implementation of linked lists through the ConcurrentLinkedDeque class.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;public class LinkedListNode {
+    int val;
+    LinkedListNode next;
+    
+    public LinkedListNode(int val) {
+        this.val = val;
+        this.next = null;
+    }
+}
+
+public class LinkedList {
+    LinkedListNode head;
+
+    public LinkedList() {
+        this.head = null;
+    }
+
+    public void add(int val) {
+        LinkedListNode node = new LinkedListNode(val);
+        if (head == null) {
+            head = node;
+        } else {
+            LinkedListNode curr = head;
+            while (curr.next != null) {
+                curr = curr.next;
+            }
+            curr.next = node;
+        }
+    }
+
+    public void printList() {
+        LinkedListNode curr = head;
+        while (curr != null) {
+            System.out.print(curr.val + &amp;quot; &amp;quot;);
+            curr = curr.next;
+        }
+        System.out.println();
+    }
+}
+
+// Example usage:
+LinkedList list = new LinkedList();
+list.add(1);
+list.add(2);
+list.add(3);
+list.printList(); // Output: 1 2 3
+
+&lt;/code&gt;&lt;/pre&gt;
+
+	</description>
+    </item>
+    <item>
+      <title>Stacks</title>
+      <link>http://localhost:8820//java-jottings/data-structures/Stacks.html</link>
+      <pubDate>Mon, 27 Mar 2023 12:30:30 +0300</pubDate>
+      <guid isPermaLink="false">java-jottings/data-structures/Stacks.html</guid>
+      	<description>
+	&lt;p&gt;There are several advantages of using a stack data structure:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;LIFO (Last-In-First-Out) behaviour: The stack data structure allows for easy access to the most recently added element, as the last item to be added is the first to be removed.&lt;/li&gt;
+&lt;li&gt;Constant time insertion and deletion: Adding or removing an element from a stack takes constant time, regardless of the size of the stack.&lt;/li&gt;
+&lt;li&gt;Memory management: Stacks are useful for managing memory in programming languages. For example, when a function is called, local variables are added to the stack, and when the function returns, those variables are removed from the stack.&lt;/li&gt;
+&lt;li&gt;Easy to implement: Stacks can be implemented using arrays or linked lists, which are both relatively easy to implement.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Stacks are particularly useful in situations where you need to keep track of a last-in-first-out sequence of elements. For example, when evaluating expressions, a stack can be used to keep track of operators and operands in the correct order. Stacks are also used in recursive algorithms, as they allow for efficient memory management when recursive calls are made. In addition, stacks can be used in undo/redo functionality in applications, as well as in web browsing history.&lt;/p&gt;
+&lt;h2&gt;Sample code&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;import java.util.Stack;
+
+public class StackExample {
+    public static void main(String[] args) {
+        // Create a new stack
+        Stack&amp;lt;Integer&amp;gt; stack = new Stack&amp;lt;Integer&amp;gt;();
+
+        // Push elements onto the stack
+        stack.push(1);
+        stack.push(2);
+        stack.push(3);
+
+        // Pop elements from the stack
+        System.out.println(stack.pop()); // prints 3
+        System.out.println(stack.pop()); // prints 2
+
+        // Check the top element of the stack
+        System.out.println(stack.peek()); // prints 1
+
+        // Check if the stack is empty
+        System.out.println(stack.empty()); // prints false
+
+        // Search for an element in the stack
+        System.out.println(stack.search(1)); // prints 1 (1-based index)
+
+        //Prints Stack, has builtin toString() method
+        System.out.println(stack);
+    }
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+
+	</description>
+    </item>
+    <item>
+      <title>Sets</title>
+      <link>http://localhost:8820//java-jottings/data-structures/Sets.html</link>
+      <pubDate>Mon, 27 Mar 2023 12:22:48 +0300</pubDate>
+      <guid isPermaLink="false">java-jottings/data-structures/Sets.html</guid>
+      	<description>
+	&lt;p&gt;A set is a collection of elements that contains no duplicates. In Java, sets are represented by the &lt;code&gt;Set&lt;/code&gt; interface and implemented by several classes, including &lt;code&gt;HashSet&lt;/code&gt;, &lt;code&gt;LinkedHashSet&lt;/code&gt;, and &lt;code&gt;TreeSet&lt;/code&gt;.&lt;/p&gt;
+&lt;h2&gt;Creating a Set&lt;/h2&gt;
+&lt;p&gt;To create a set in Java, you first need to declare the set and specify the type of elements it will contain. For example:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;Set&amp;lt;String&amp;gt; mySet = new HashSet&amp;lt;String&amp;gt;();
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;Adding elements to a set&lt;/h2&gt;
+&lt;p&gt;To add an element to a set, you can use the &lt;code&gt;add&lt;/code&gt; method:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;mySet.add(&amp;quot;apple&amp;quot;);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;Removing elements from a set&lt;/h2&gt;
+&lt;p&gt;To remove an element from a set, you can use the &lt;code&gt;remove&lt;/code&gt; method:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;mySet.remove(&amp;quot;apple&amp;quot;);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This will remove the string &amp;quot;apple&amp;quot; from the set.&lt;/p&gt;
+&lt;h2&gt;Checking if an Element is in a Set&lt;/h2&gt;
+&lt;p&gt;To check if a set contains a specific element, you can use the &lt;code&gt;contains&lt;/code&gt; method:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;if (mySet.contains(&amp;quot;apple&amp;quot;)) {
+    System.out.println(&amp;quot;The set contains an apple.&amp;quot;);
+} else {
+    System.out.println(&amp;quot;The set does not contain an apple.&amp;quot;);
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;Iterating Through a Set&lt;/h2&gt;
+&lt;p&gt;To iterate through the elements of a set, you can use a for-each loop:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;for (String element : mySet) {
+    System.out.println(element);
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This will print each element in the set on a separate line.&lt;/p&gt;
+&lt;h3&gt;Best Practices&lt;/h3&gt;
+&lt;p&gt;Here are some best practices to keep in mind when working with Sets in Java:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Use the appropriate Set implementation for your needs. HashSet is usually the fastest, but if you need to maintain the order of the elements, consider using TreeSet or LinkedHashSet.&lt;/li&gt;
+&lt;li&gt;Use the &lt;code&gt;contains()&lt;/code&gt; method to check if an element is in a Set before adding it. This will prevent duplicates.&lt;/li&gt;
+&lt;li&gt;Use the for-each loop to iterate over the elements of a Set. It is simpler and less error-prone than using an iterator.&lt;/li&gt;
+&lt;li&gt;Consider using the &lt;code&gt;addAll()&lt;/code&gt; method to add all elements from one set to another.&lt;/li&gt;
+&lt;li&gt;When using a custom class as the type parameter for a Set, make sure to implement the &lt;code&gt;equals()&lt;/code&gt; and &lt;code&gt;hashCode()&lt;/code&gt; methods correctly to ensure proper functioning of the Set.&lt;/li&gt;
+&lt;/ul&gt;
+
+	</description>
+    </item>
+    <item>
+      <title>main Method</title>
+      <link>http://localhost:8820//java-jottings/java-fundamentals/main+Method.html</link>
+      <pubDate>Mon, 27 Mar 2023 12:21:42 +0300</pubDate>
+      <guid isPermaLink="false">java-jottings/java-fundamentals/main+Method.html</guid>
+      	<description>
+	&lt;p&gt;The &lt;code&gt;main()&lt;/code&gt; method is a special method in Java that serves as the entry point of a Java application. When you run a Java program, the JVM (Java Virtual Machine) calls the &lt;code&gt;main()&lt;/code&gt; method to start the execution of the program.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;main()&lt;/code&gt; method must be defined as follows:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;public static void main(String[] args)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The &lt;code&gt;public&lt;/code&gt; keyword indicates that the method can be accessed from anywhere in the program.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;static&lt;/code&gt; keyword indicates that the method belongs to the class rather than to an instance of the class.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;void&lt;/code&gt; keyword indicates that the method does not return a value.&lt;/p&gt;
+&lt;p&gt;The parameter &lt;code&gt;String[] args&lt;/code&gt; is an array of strings that contains any command-line arguments passed to the program.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;main()&lt;/code&gt; method can contain any Java code necessary for the program&apos;s execution. Typically, the &lt;code&gt;main()&lt;/code&gt; method initializes the program&apos;s data structures and objects, performs any necessary computations, and prints output to the console or to a file.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;main()&lt;/code&gt; method can throw exceptions, which can be caught and handled by the program or propagated up to the JVM.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;main()&lt;/code&gt; method is not required for all Java programs. For example, programs that run as applets or as servlets in a web container do not have a &lt;code&gt;main()&lt;/code&gt; method.&lt;/p&gt;
+
+	</description>
+    </item>
+    <item>
+      <title>Packages</title>
+      <link>http://localhost:8820//java-jottings/java-fundamentals/Packages.html</link>
+      <pubDate>Mon, 27 Mar 2023 12:20:58 +0300</pubDate>
+      <guid isPermaLink="false">java-jottings/java-fundamentals/Packages.html</guid>
+      	<description>
+	&lt;p&gt;&lt;strong&gt;java package&lt;/strong&gt; is a group of similar types of classes, interfaces and sub-packages.&lt;/p&gt;
+&lt;h2&gt;Syntax&lt;/h2&gt;
+&lt;p&gt;Creating a package&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;package com.example.myapp;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Compiling a package&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-sh&quot;&gt;javac -d directory javafilename
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Importing a package&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;package thisPackage;
+import com.example.myapp;
+
+public Class{
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;If you import a package, all the classes and interface of that package will be imported excluding the classes and interfaces of the subpackages. Hence, you need to import the subpackage as well.&lt;/p&gt;
+&lt;h3&gt;Default Package&lt;/h3&gt;
+&lt;p&gt;If you do not specify a package for your classes, they will be placed in the default package. However, it is recommended to always use packages to avoid naming conflicts and make your code easier to manage.&lt;/p&gt;
+&lt;h3&gt;Package Naming Conventions&lt;/h3&gt;
+&lt;p&gt;Package names in Java follow the reverse domain name convention. For example, if a company owns the domain name example.com, they would use the following package name:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;package com.example.myapp;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;Package-level Annotations&lt;/h2&gt;
+&lt;p&gt;Java also allows you to add annotations at the package level. These annotations apply to all classes and interfaces in the package. For example:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;@Deprecated 
+package com.example.myapp;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This marks the entire package as deprecated, and any usage of classes or interfaces within the package will generate a warning.&lt;/p&gt;
+
+	</description>
+    </item>
+    <item>
       <title>Java Data Types and Variables</title>
-      <link>http://jbake.org/java-jottings/java-fundamentals/data-types-and-variables.html</link>
-      <pubDate>Wed, 22 Mar 2023 12:14:18 +0200</pubDate>
+      <link>http://localhost:8820//java-jottings/java-fundamentals/data-types-and-variables.html</link>
+      <pubDate>Mon, 27 Mar 2023 12:20:33 +0300</pubDate>
       <guid isPermaLink="false">java-jottings/java-fundamentals/data-types-and-variables.html</guid>
       	<description>
 	&lt;p&gt;Java is a strongly-typed language, which means that all variables must have a declared data type. Variables are used to store values in memory. In Java, you declare a variable by specifying its data type and name.&lt;/p&gt;
@@ -33,8 +254,128 @@ String name = &amp;quot;John&amp;quot;; // declare and initialize a string varia
 	</description>
     </item>
     <item>
+      <title>Using File APIs</title>
+      <link>http://localhost:8820//java-jottings/java-fundamentals/using-file-apis.html</link>
+      <pubDate>Sun, 26 Mar 2023 15:25:55 +0300</pubDate>
+      <guid isPermaLink="false">java-jottings/java-fundamentals/using-file-apis.html</guid>
+      	<description>
+	&lt;h2&gt;Sample Code&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
+import java.util.List; 
+
+public class App {
+    public static void main(String[] args) throws Exception {
+        //Writing files 
+		String text = &amp;quot;This is a test&amp;quot;;
+        try{
+            Files.write(Paths.get(&amp;quot;file.txt&amp;quot;), text.getBytes(), StandardOpenOption.CREATE);
+            System.out.println(&amp;quot;File wrote successfully&amp;quot;);
+        } catch (IOException exception){
+            System.out.println(&amp;quot;it wasn&apos;t possible to write the file&amp;quot;);
+        }
+        
+        //Reading files
+        try{
+            List&amp;lt;String&amp;gt; textRead = Files.readAllLines(Paths.get(&amp;quot;file.txt&amp;quot;));
+            for(String line: textRead)
+                System.out.println(line);
+		} catch (IOException exception){
+            System.out.println(&amp;quot;it wasn&apos;t possible to read the file&amp;quot;);
+        } 
+        //Manipulating Paths
+        Path path = Paths.get(&amp;quot;.&amp;quot;,&amp;quot;file.txt&amp;quot;);
+        
+        //Deleting
+        try{
+	        Files.delete(path);
+        }catch (IOException exception){
+            System.out.println(&amp;quot;it wasn&apos;t possible to delete the file&amp;quot;);
+        }     
+	}
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;&lt;code&gt;java.io.File&lt;/code&gt; vs &lt;code&gt;java.nio.file.Path&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;Java has two file APIs.&lt;br /&gt;
+- The original &lt;code&gt;java.io.File&lt;/code&gt; API, available since Java 1.0 (1996).&lt;br /&gt;
+- The newer &lt;code&gt;java.nio.file.Path&lt;/code&gt; API, available since Java 1.7 (2011).&lt;/p&gt;
+&lt;h2&gt;File vs Path API&lt;/h2&gt;
+&lt;p&gt;Nevertheless, &lt;code&gt;java.nio.file.Path&lt;/code&gt; does everything &lt;code&gt;java.io.File&lt;/code&gt; can, but generally in a better way and more. A few examples:&lt;br /&gt;
+- File Features: The new classes support symlinks, proper file attributes and metadata support (think: PosixFileAttributes), ACLs and more.&lt;br /&gt;
+- Better usage: E.g. when deleting a file, you get an exception with a meaningful error message (no such file, file locked, etc.), instead of a simple boolean saying &lt;code&gt;false&lt;/code&gt;.&lt;br /&gt;
+- Decoupling: Enabling support for in-memory file systems, which we’ll cover later.&lt;/p&gt;
+&lt;h3&gt;Reading Files&lt;/h3&gt;
+&lt;p&gt;To read the contents of a file in Java, you can use the &lt;code&gt;java.nio.file.Files&lt;/code&gt; class, which provides a number of static methods for working with files. The most common method for reading a file is &lt;code&gt;readAllLines&lt;/code&gt;, which reads all the lines in a file and returns them as a list of strings:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.List;
+
+public class ReadFileExample {
+    public static void main(String[] args) throws Exception {
+        List&amp;lt;String&amp;gt; lines = Files.readAllLines(Paths.get(&amp;quot;folder\\file.txt&amp;quot;));
+        for (String line : lines) {
+            System.out.println(line);
+        }
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;Writing Files&lt;/h3&gt;
+&lt;p&gt;To write to a file in Java, you can use the &lt;code&gt;java.nio.file.Files&lt;/code&gt; class again, this time with the &lt;code&gt;write&lt;/code&gt; method:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
+
+public class WriteFileExample {
+    public static void main(String[] args) throws Exception {
+        String text = &amp;quot;Hello, world!&amp;quot;;
+        Files.write(Paths.get(&amp;quot;folder\\file.txt&amp;quot;), text.getBytes(), StandardOpenOption.CREATE);
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;Deleting Files and Directories&lt;/h3&gt;
+&lt;p&gt;To delete a file in Java, you can use the &lt;code&gt;java.nio.file.Files&lt;/code&gt; class with the &lt;code&gt;delete&lt;/code&gt; method:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;import java.nio.file.Files;
+import java.nio.file.Paths;
+
+public class DeleteFileExample {
+    public static void main(String[] args) throws Exception {
+        Files.delete(Paths.get(&amp;quot;folder\\file.txt&amp;quot;));
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;To delete a directory, you can use the &lt;code&gt;java.nio.file.Files&lt;/code&gt; class again, this time with the &lt;code&gt;delete&lt;/code&gt; method and a directory path:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;import java.nio.file.Files;
+import java.nio.file.Paths;
+
+public class DeleteDirectoryExample {
+    public static void main(String[] args) throws Exception {
+        Files.delete(Paths.get(&amp;quot;folder&amp;quot;));
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;Manipulating Paths&lt;/h3&gt;
+&lt;p&gt;When working with files and directories, you often need to manipulate paths. Java provides the &lt;code&gt;java.nio.file.Path&lt;/code&gt; interface for working with paths. You can create a path using the &lt;code&gt;Paths.get&lt;/code&gt; method:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;import java.nio.file.Path;
+import java.nio.file.Paths;
+
+public class PathExample {
+    public static void main(String[] args) throws Exception {
+        Path path = Paths.get(&amp;quot;directory&amp;quot;, &amp;quot;file.txt&amp;quot;);
+        System.out.println(path.toString());
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;Best Practices&lt;/h3&gt;
+&lt;p&gt;When working with files in Java, it is important to properly handle exceptions and close files when you are done with them. It is also a good practice to use try-with-resources statements to automatically close files, and to use appropriate file permissions to ensure the security of your files.&lt;/p&gt;
+
+	</description>
+    </item>
+    <item>
       <title>Java Basic Syntax</title>
-      <link>http://jbake.org/java-jottings/java-fundamentals/java-basic-syntax.html</link>
+      <link>http://localhost:8820//java-jottings/java-fundamentals/java-basic-syntax.html</link>
       <pubDate>Wed, 22 Mar 2023 12:14:10 +0200</pubDate>
       <guid isPermaLink="false">java-jottings/java-fundamentals/java-basic-syntax.html</guid>
       	<description>

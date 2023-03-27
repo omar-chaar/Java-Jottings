@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>Java Basic Syntax</title>
+    <title>main Method</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -90,50 +90,20 @@
 	</div>
 	<div class="container">
 	<div class="page-header">
-		<h1>Java Basic Syntax</h1>
+		<h1>main Method</h1>
 	</div>
 
-	<p><p>Java programs are organized into Classes, which are defined using the <code>class</code> keyword. For example, the following code defines a class named <code>MyClass</code>:</p>
-<pre><code class="language-java">public class MyClass { 
-// code describing MyClass behaviour and states goes here 
-}
+	<p><p>The <code>main()</code> method is a special method in Java that serves as the entry point of a Java application. When you run a Java program, the JVM (Java Virtual Machine) calls the <code>main()</code> method to start the execution of the program.</p>
+<p>The <code>main()</code> method must be defined as follows:</p>
+<pre><code class="language-java">public static void main(String[] args)
 </code></pre>
-<p>Each class can have one or more methods, which define the behaviour of the class. Methods are defined using the <code>public</code> keyword (which indicates that the method can be accessed from outside the class), followed by the return type of the method, followed by the method name and its parameters.</p>
-<pre><code class="language-java">public int add(int a, int b) {
-    return a + b;
-}
-</code></pre>
-<p>Java is a strongly-typed language, which means that all variables and expressions have a specific type. Types can be primitive (like <code>int</code> or <code>boolean</code>) or reference types (like <code>String</code> or <code>Object</code>).</p>
-<pre><code class="language-java">int x = 10;
-</code></pre>
-<p>Java supports a wide range of control structures, including <code>if</code> statements, <code>for</code> loops, <code>while</code> loops, and <code>switch</code> statements.</p>
-<pre><code class="language-java">if (x &gt; y) { 
-	System.out.println(&quot;x is greater than y&quot;); 
-}
-</code></pre>
-<p>Java supports Objected-Oriented Programming, which means that classes can inherit behaviour and data from other classes, and can override methods to provide customized behaviour. For example, the following code defines a subclass named <code>ChildClass</code> that extends a superclass named <code>ParentClass</code>:</p>
-<pre><code class="language-java">class Animal {
-    public void speak() {
-        System.out.println(&quot;The animal makes a sound.&quot;);
-    }
-}
-
-class Dog extends Animal {
-    public void speak() {
-        System.out.println(&quot;The dog says woof!&quot;);
-    }
-}
-
-public class Main {
-    public static void main(String[] args) {
-        Animal myAnimal = new Animal();
-        myAnimal.speak();
-        
-        Dog myDog = new Dog();
-        myDog.speak();
-    }
-}
-</code></pre>
+<p>The <code>public</code> keyword indicates that the method can be accessed from anywhere in the program.</p>
+<p>The <code>static</code> keyword indicates that the method belongs to the class rather than to an instance of the class.</p>
+<p>The <code>void</code> keyword indicates that the method does not return a value.</p>
+<p>The parameter <code>String[] args</code> is an array of strings that contains any command-line arguments passed to the program.</p>
+<p>The <code>main()</code> method can contain any Java code necessary for the program's execution. Typically, the <code>main()</code> method initializes the program's data structures and objects, performs any necessary computations, and prints output to the console or to a file.</p>
+<p>The <code>main()</code> method can throw exceptions, which can be caught and handled by the program or propagated up to the JVM.</p>
+<p>The <code>main()</code> method is not required for all Java programs. For example, programs that run as applets or as servlets in a web container do not have a <code>main()</code> method.</p>
 </p>
 
 	<hr />
