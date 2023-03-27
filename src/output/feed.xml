@@ -6,60 +6,13 @@
     <atom:link href="http://localhost:8820//feed.xml" rel="self" type="application/rss+xml" />
     <description>JBake Bootstrap Template</description>
     <language>en-gb</language>
-    <pubDate>Mon, 27 Mar 2023 12:28:38 +0300</pubDate>
-    <lastBuildDate>Mon, 27 Mar 2023 12:28:38 +0300</lastBuildDate>
+    <pubDate>Mon, 27 Mar 2023 12:30:57 +0300</pubDate>
+    <lastBuildDate>Mon, 27 Mar 2023 12:30:57 +0300</lastBuildDate>
 
-    <item>
-      <title>Sets</title>
-      <link>http://localhost:8820//java-jottings/data-structures/Sets.html</link>
-      <pubDate>Mon, 27 Mar 2023 12:22:48 +0300</pubDate>
-      <guid isPermaLink="false">java-jottings/data-structures/Sets.html</guid>
-      	<description>
-	&lt;p&gt;A set is a collection of elements that contains no duplicates. In Java, sets are represented by the &lt;code&gt;Set&lt;/code&gt; interface and implemented by several classes, including &lt;code&gt;HashSet&lt;/code&gt;, &lt;code&gt;LinkedHashSet&lt;/code&gt;, and &lt;code&gt;TreeSet&lt;/code&gt;.&lt;/p&gt;
-&lt;h2&gt;Creating a Set&lt;/h2&gt;
-&lt;p&gt;To create a set in Java, you first need to declare the set and specify the type of elements it will contain. For example:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;Set&amp;lt;String&amp;gt; mySet = new HashSet&amp;lt;String&amp;gt;();
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2&gt;Adding elements to a set&lt;/h2&gt;
-&lt;p&gt;To add an element to a set, you can use the &lt;code&gt;add&lt;/code&gt; method:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;mySet.add(&amp;quot;apple&amp;quot;);
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2&gt;Removing elements from a set&lt;/h2&gt;
-&lt;p&gt;To remove an element from a set, you can use the &lt;code&gt;remove&lt;/code&gt; method:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;mySet.remove(&amp;quot;apple&amp;quot;);
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;This will remove the string &amp;quot;apple&amp;quot; from the set.&lt;/p&gt;
-&lt;h2&gt;Checking if an Element is in a Set&lt;/h2&gt;
-&lt;p&gt;To check if a set contains a specific element, you can use the &lt;code&gt;contains&lt;/code&gt; method:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;if (mySet.contains(&amp;quot;apple&amp;quot;)) {
-    System.out.println(&amp;quot;The set contains an apple.&amp;quot;);
-} else {
-    System.out.println(&amp;quot;The set does not contain an apple.&amp;quot;);
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2&gt;Iterating Through a Set&lt;/h2&gt;
-&lt;p&gt;To iterate through the elements of a set, you can use a for-each loop:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;for (String element : mySet) {
-    System.out.println(element);
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;This will print each element in the set on a separate line.&lt;/p&gt;
-&lt;h3&gt;Best Practices&lt;/h3&gt;
-&lt;p&gt;Here are some best practices to keep in mind when working with Sets in Java:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Use the appropriate Set implementation for your needs. HashSet is usually the fastest, but if you need to maintain the order of the elements, consider using TreeSet or LinkedHashSet.&lt;/li&gt;
-&lt;li&gt;Use the &lt;code&gt;contains()&lt;/code&gt; method to check if an element is in a Set before adding it. This will prevent duplicates.&lt;/li&gt;
-&lt;li&gt;Use the for-each loop to iterate over the elements of a Set. It is simpler and less error-prone than using an iterator.&lt;/li&gt;
-&lt;li&gt;Consider using the &lt;code&gt;addAll()&lt;/code&gt; method to add all elements from one set to another.&lt;/li&gt;
-&lt;li&gt;When using a custom class as the type parameter for a Set, make sure to implement the &lt;code&gt;equals()&lt;/code&gt; and &lt;code&gt;hashCode()&lt;/code&gt; methods correctly to ensure proper functioning of the Set.&lt;/li&gt;
-&lt;/ul&gt;
-
-	</description>
-    </item>
     <item>
       <title>Linked List</title>
       <link>http://localhost:8820//java-jottings/data-structures/Linked+List.html</link>
-      <pubDate>Mon, 27 Mar 2023 12:22:39 +0300</pubDate>
+      <pubDate>Mon, 27 Mar 2023 12:30:56 +0300</pubDate>
       <guid isPermaLink="false">java-jottings/data-structures/Linked+List.html</guid>
       	<description>
 	&lt;ul&gt;
@@ -126,29 +79,9 @@ list.printList(); // Output: 1 2 3
 	</description>
     </item>
     <item>
-      <title>main Method</title>
-      <link>http://localhost:8820//java-jottings/java-fundamentals/main+Method.html</link>
-      <pubDate>Mon, 27 Mar 2023 12:21:42 +0300</pubDate>
-      <guid isPermaLink="false">java-jottings/java-fundamentals/main+Method.html</guid>
-      	<description>
-	&lt;p&gt;The &lt;code&gt;main()&lt;/code&gt; method is a special method in Java that serves as the entry point of a Java application. When you run a Java program, the JVM (Java Virtual Machine) calls the &lt;code&gt;main()&lt;/code&gt; method to start the execution of the program.&lt;/p&gt;
-&lt;p&gt;The &lt;code&gt;main()&lt;/code&gt; method must be defined as follows:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;public static void main(String[] args)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;The &lt;code&gt;public&lt;/code&gt; keyword indicates that the method can be accessed from anywhere in the program.&lt;/p&gt;
-&lt;p&gt;The &lt;code&gt;static&lt;/code&gt; keyword indicates that the method belongs to the class rather than to an instance of the class.&lt;/p&gt;
-&lt;p&gt;The &lt;code&gt;void&lt;/code&gt; keyword indicates that the method does not return a value.&lt;/p&gt;
-&lt;p&gt;The parameter &lt;code&gt;String[] args&lt;/code&gt; is an array of strings that contains any command-line arguments passed to the program.&lt;/p&gt;
-&lt;p&gt;The &lt;code&gt;main()&lt;/code&gt; method can contain any Java code necessary for the program&apos;s execution. Typically, the &lt;code&gt;main()&lt;/code&gt; method initializes the program&apos;s data structures and objects, performs any necessary computations, and prints output to the console or to a file.&lt;/p&gt;
-&lt;p&gt;The &lt;code&gt;main()&lt;/code&gt; method can throw exceptions, which can be caught and handled by the program or propagated up to the JVM.&lt;/p&gt;
-&lt;p&gt;The &lt;code&gt;main()&lt;/code&gt; method is not required for all Java programs. For example, programs that run as applets or as servlets in a web container do not have a &lt;code&gt;main()&lt;/code&gt; method.&lt;/p&gt;
-
-	</description>
-    </item>
-    <item>
       <title>Stacks</title>
       <link>http://localhost:8820//java-jottings/data-structures/Stacks.html</link>
-      <pubDate>Mon, 27 Mar 2023 12:21:31 +0300</pubDate>
+      <pubDate>Mon, 27 Mar 2023 12:30:30 +0300</pubDate>
       <guid isPermaLink="false">java-jottings/data-structures/Stacks.html</guid>
       	<description>
 	&lt;p&gt;There are several advantages of using a stack data structure:&lt;/p&gt;
@@ -191,6 +124,73 @@ public class StackExample {
 }
 
 &lt;/code&gt;&lt;/pre&gt;
+
+	</description>
+    </item>
+    <item>
+      <title>Sets</title>
+      <link>http://localhost:8820//java-jottings/data-structures/Sets.html</link>
+      <pubDate>Mon, 27 Mar 2023 12:22:48 +0300</pubDate>
+      <guid isPermaLink="false">java-jottings/data-structures/Sets.html</guid>
+      	<description>
+	&lt;p&gt;A set is a collection of elements that contains no duplicates. In Java, sets are represented by the &lt;code&gt;Set&lt;/code&gt; interface and implemented by several classes, including &lt;code&gt;HashSet&lt;/code&gt;, &lt;code&gt;LinkedHashSet&lt;/code&gt;, and &lt;code&gt;TreeSet&lt;/code&gt;.&lt;/p&gt;
+&lt;h2&gt;Creating a Set&lt;/h2&gt;
+&lt;p&gt;To create a set in Java, you first need to declare the set and specify the type of elements it will contain. For example:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;Set&amp;lt;String&amp;gt; mySet = new HashSet&amp;lt;String&amp;gt;();
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;Adding elements to a set&lt;/h2&gt;
+&lt;p&gt;To add an element to a set, you can use the &lt;code&gt;add&lt;/code&gt; method:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;mySet.add(&amp;quot;apple&amp;quot;);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;Removing elements from a set&lt;/h2&gt;
+&lt;p&gt;To remove an element from a set, you can use the &lt;code&gt;remove&lt;/code&gt; method:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;mySet.remove(&amp;quot;apple&amp;quot;);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This will remove the string &amp;quot;apple&amp;quot; from the set.&lt;/p&gt;
+&lt;h2&gt;Checking if an Element is in a Set&lt;/h2&gt;
+&lt;p&gt;To check if a set contains a specific element, you can use the &lt;code&gt;contains&lt;/code&gt; method:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;if (mySet.contains(&amp;quot;apple&amp;quot;)) {
+    System.out.println(&amp;quot;The set contains an apple.&amp;quot;);
+} else {
+    System.out.println(&amp;quot;The set does not contain an apple.&amp;quot;);
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;Iterating Through a Set&lt;/h2&gt;
+&lt;p&gt;To iterate through the elements of a set, you can use a for-each loop:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;for (String element : mySet) {
+    System.out.println(element);
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This will print each element in the set on a separate line.&lt;/p&gt;
+&lt;h3&gt;Best Practices&lt;/h3&gt;
+&lt;p&gt;Here are some best practices to keep in mind when working with Sets in Java:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Use the appropriate Set implementation for your needs. HashSet is usually the fastest, but if you need to maintain the order of the elements, consider using TreeSet or LinkedHashSet.&lt;/li&gt;
+&lt;li&gt;Use the &lt;code&gt;contains()&lt;/code&gt; method to check if an element is in a Set before adding it. This will prevent duplicates.&lt;/li&gt;
+&lt;li&gt;Use the for-each loop to iterate over the elements of a Set. It is simpler and less error-prone than using an iterator.&lt;/li&gt;
+&lt;li&gt;Consider using the &lt;code&gt;addAll()&lt;/code&gt; method to add all elements from one set to another.&lt;/li&gt;
+&lt;li&gt;When using a custom class as the type parameter for a Set, make sure to implement the &lt;code&gt;equals()&lt;/code&gt; and &lt;code&gt;hashCode()&lt;/code&gt; methods correctly to ensure proper functioning of the Set.&lt;/li&gt;
+&lt;/ul&gt;
+
+	</description>
+    </item>
+    <item>
+      <title>main Method</title>
+      <link>http://localhost:8820//java-jottings/java-fundamentals/main+Method.html</link>
+      <pubDate>Mon, 27 Mar 2023 12:21:42 +0300</pubDate>
+      <guid isPermaLink="false">java-jottings/java-fundamentals/main+Method.html</guid>
+      	<description>
+	&lt;p&gt;The &lt;code&gt;main()&lt;/code&gt; method is a special method in Java that serves as the entry point of a Java application. When you run a Java program, the JVM (Java Virtual Machine) calls the &lt;code&gt;main()&lt;/code&gt; method to start the execution of the program.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;main()&lt;/code&gt; method must be defined as follows:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;public static void main(String[] args)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The &lt;code&gt;public&lt;/code&gt; keyword indicates that the method can be accessed from anywhere in the program.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;static&lt;/code&gt; keyword indicates that the method belongs to the class rather than to an instance of the class.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;void&lt;/code&gt; keyword indicates that the method does not return a value.&lt;/p&gt;
+&lt;p&gt;The parameter &lt;code&gt;String[] args&lt;/code&gt; is an array of strings that contains any command-line arguments passed to the program.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;main()&lt;/code&gt; method can contain any Java code necessary for the program&apos;s execution. Typically, the &lt;code&gt;main()&lt;/code&gt; method initializes the program&apos;s data structures and objects, performs any necessary computations, and prints output to the console or to a file.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;main()&lt;/code&gt; method can throw exceptions, which can be caught and handled by the program or propagated up to the JVM.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;main()&lt;/code&gt; method is not required for all Java programs. For example, programs that run as applets or as servlets in a web container do not have a &lt;code&gt;main()&lt;/code&gt; method.&lt;/p&gt;
 
 	</description>
     </item>
