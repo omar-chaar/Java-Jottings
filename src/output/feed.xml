@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>JBake</title>
-    <link>https://omar-chaar.github.io//</link>
-    <atom:link href="https://omar-chaar.github.io///feed.xml" rel="self" type="application/rss+xml" />
+    <link>http://localhost:8820/</link>
+    <atom:link href="http://localhost:8820//feed.xml" rel="self" type="application/rss+xml" />
     <description>JBake Bootstrap Template</description>
     <language>en-gb</language>
-    <pubDate>Fri, 31 Mar 2023 21:16:45 +0300</pubDate>
-    <lastBuildDate>Fri, 31 Mar 2023 21:16:45 +0300</lastBuildDate>
+    <pubDate>Fri, 31 Mar 2023 21:37:50 +0300</pubDate>
+    <lastBuildDate>Fri, 31 Mar 2023 21:37:50 +0300</lastBuildDate>
 
     <item>
       <title>Linked List</title>
-      <link>https://omar-chaar.github.io///java-jottings/data-structures/Linked+List.html</link>
+      <link>http://localhost:8820//java-jottings/data-structures/Linked+List.html</link>
       <pubDate>Mon, 27 Mar 2023 12:30:56 +0300</pubDate>
       <guid isPermaLink="false">java-jottings/data-structures/Linked+List.html</guid>
       	<description>
@@ -80,7 +80,7 @@ list.printList(); // Output: 1 2 3
     </item>
     <item>
       <title>Stacks</title>
-      <link>http:/localhost:8820/java-jottings/data-structures/Stacks.html</link>
+      <link>http://localhost:8820//java-jottings/data-structures/Stacks.html</link>
       <pubDate>Mon, 27 Mar 2023 12:30:30 +0300</pubDate>
       <guid isPermaLink="false">java-jottings/data-structures/Stacks.html</guid>
       	<description>
@@ -129,7 +129,7 @@ public class StackExample {
     </item>
     <item>
       <title>Sets</title>
-      <link>https://omar-chaar.github.io///java-jottings/data-structures/Sets.html</link>
+      <link>http://localhost:8820//java-jottings/data-structures/Sets.html</link>
       <pubDate>Mon, 27 Mar 2023 12:22:48 +0300</pubDate>
       <guid isPermaLink="false">java-jottings/data-structures/Sets.html</guid>
       	<description>
@@ -176,7 +176,7 @@ public class StackExample {
     </item>
     <item>
       <title>main Method</title>
-      <link>https://omar-chaar.github.io///java-jottings/java-fundamentals/main+Method.html</link>
+      <link>http://localhost:8820//java-jottings/java-fundamentals/main+Method.html</link>
       <pubDate>Mon, 27 Mar 2023 12:21:42 +0300</pubDate>
       <guid isPermaLink="false">java-jottings/java-fundamentals/main+Method.html</guid>
       	<description>
@@ -196,7 +196,7 @@ public class StackExample {
     </item>
     <item>
       <title>Packages</title>
-      <link>https://omar-chaar.github.io///java-jottings/java-fundamentals/Packages.html</link>
+      <link>http://localhost:8820//java-jottings/java-fundamentals/Packages.html</link>
       <pubDate>Mon, 27 Mar 2023 12:20:58 +0300</pubDate>
       <guid isPermaLink="false">java-jottings/java-fundamentals/Packages.html</guid>
       	<description>
@@ -232,7 +232,7 @@ package com.example.myapp;
     </item>
     <item>
       <title>Java Data Types and Variables</title>
-      <link>https://omar-chaar.github.io///java-jottings/java-fundamentals/data-types-and-variables.html</link>
+      <link>http://localhost:8820//java-jottings/java-fundamentals/data-types-and-variables.html</link>
       <pubDate>Mon, 27 Mar 2023 12:20:33 +0300</pubDate>
       <guid isPermaLink="false">java-jottings/java-fundamentals/data-types-and-variables.html</guid>
       	<description>
@@ -255,7 +255,7 @@ String name = &amp;quot;John&amp;quot;; // declare and initialize a string varia
     </item>
     <item>
       <title>Using File APIs</title>
-      <link>https://omar-chaar.github.io///java-jottings/java-fundamentals/using-file-apis.html</link>
+      <link>http://localhost:8820//java-jottings/java-fundamentals/using-file-apis.html</link>
       <pubDate>Sun, 26 Mar 2023 15:25:55 +0300</pubDate>
       <guid isPermaLink="false">java-jottings/java-fundamentals/using-file-apis.html</guid>
       	<description>
@@ -375,7 +375,7 @@ public class PathExample {
     </item>
     <item>
       <title>Java Basic Syntax</title>
-      <link>https://omar-chaar.github.io///java-jottings/java-fundamentals/java-basic-syntax.html</link>
+      <link>http://localhost:8820//java-jottings/java-fundamentals/java-basic-syntax.html</link>
       <pubDate>Wed, 22 Mar 2023 12:14:10 +0200</pubDate>
       <guid isPermaLink="false">java-jottings/java-fundamentals/java-basic-syntax.html</guid>
       	<description>
