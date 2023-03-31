@@ -19,7 +19,7 @@
 						<ul class="dropdown-menu">
 							<#list posts as post>
 								<#if (post.group=="java-fundamentals" )>
-									<li><a href="${post.uri}">
+									<li><a href="${config.site_host}${post.uri}">
 											${post.title}
 										</a>
 								</#if>
@@ -31,7 +31,7 @@
 						<ul class="dropdown-menu">
 							<#list posts as post>
 								<#if (post.group=="data-structures" )>
-									<li><a href="${post.uri}">
+									<li><a href="${config.site_host}${post.uri}">
 											${post.title}
 										</a>
 								</#if>
