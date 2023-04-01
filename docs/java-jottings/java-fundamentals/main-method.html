@@ -3,7 +3,7 @@
 
     <head>
         <meta charset="utf-8">
-        <title>Java Data Types and Variables</title>
+        <title>main Method</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Java Jottings is a collection of small Java notes that I have written to learn new concepts and techniques.">
         <meta name="author" content="Omar Chaar">
@@ -12,14 +12,14 @@
         
         <!--Facebook Card-->
 		<meta property="og:type" content="article" />
-		<meta property="og:title"  content="Java Data Types and Variables" />
+		<meta property="og:title"  content="main Method" />
 		<meta property="og:description" content="Java Jottings is a collection of small Java notes that I have written to learn new concepts and techniques."/>
 		<meta property="og:image" content="http://localhost:8820//img/yosemite.jpg" />
         
         <!--Twitter card -->
         
         <meta name="twitter:card" content="summary_large_image">
-		<meta name="twitter:title" content="Java Data Types and Variables">
+		<meta name="twitter:title" content="main Method">
 		<meta name="twitter:creator" content="@omaarchaar">
 		<meta name="twitter:description" content="Java Jottings is a collection of small Java notes that I have written to learn new concepts and techniques.">
 		<meta name="twitter:image" content="http://localhost:8820//img/yosemite.jpg">
@@ -81,7 +81,7 @@
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                         <div class="post-heading">
-                            <h1>Java Data Types and Variables</h1>
+                            <h1>main Method</h1>
                             
                             <span class="meta">Posted by <b>Omar Chaar</b> on 
                                 April 01, 2023
@@ -98,20 +98,17 @@
         <article>
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><p>Java is a strongly-typed language, which means that all variables must have a declared data type. Variables are used to store values in memory. In Java, you declare a variable by specifying its data type and name.</p>
-<h3>Primitive vs Non-Primitive</h3>
-<p>Java has two categories of data types: primitive types and reference types.</p>
-<h4>Primitive</h4>
-<p>Primitive types are built-in types that represent simple values, such as int, float, double, bool and char.</p>
-<h4>Non-Primitive or Reference</h4>
-<p>Reference types are more complex types that represent Objects, such as Strings, arrays and user-defined classes.</p>
-<h3>Initialization</h3>
-<p>Variables can be initialized with a value when they are declared, or they can be assigned a value later in the program.</p>
-<pre><code class="language-java">int num1 = 10; // declare and initialize an integer variable
-double num2; // declare a double variable
-num2 = 3.14; // assign a value to the double variable
-String name = &quot;John&quot;; // declare and initialize a string variable
+                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><p>The <code>main()</code> method is a special method in Java that serves as the entry point of a Java application. When you run a Java program, the JVM (Java Virtual Machine) calls the <code>main()</code> method to start the execution of the program.</p>
+<p>The <code>main()</code> method must be defined as follows:</p>
+<pre><code class="language-java">public static void main(String[] args)
 </code></pre>
+<p>The <code>public</code> keyword indicates that the method can be accessed from anywhere in the program.</p>
+<p>The <code>static</code> keyword indicates that the method belongs to the class rather than to an instance of the class.</p>
+<p>The <code>void</code> keyword indicates that the method does not return a value.</p>
+<p>The parameter <code>String[] args</code> is an array of strings that contains any command-line arguments passed to the program.</p>
+<p>The <code>main()</code> method can contain any Java code necessary for the program's execution. Typically, the <code>main()</code> method initializes the program's data structures and objects, performs any necessary computations, and prints output to the console or to a file.</p>
+<p>The <code>main()</code> method can throw exceptions, which can be caught and handled by the program or propagated up to the JVM.</p>
+<p>The <code>main()</code> method is not required for all Java programs. For example, programs that run as applets or as servlets in a web container do not have a <code>main()</code> method.</p>
 </div>
                 </div>
             </div>

@@ -3,7 +3,7 @@
 
     <head>
         <meta charset="utf-8">
-        <title>Java Data Types and Variables</title>
+        <title>Linked List</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Java Jottings is a collection of small Java notes that I have written to learn new concepts and techniques.">
         <meta name="author" content="Omar Chaar">
@@ -12,14 +12,14 @@
         
         <!--Facebook Card-->
 		<meta property="og:type" content="article" />
-		<meta property="og:title"  content="Java Data Types and Variables" />
+		<meta property="og:title"  content="Linked List" />
 		<meta property="og:description" content="Java Jottings is a collection of small Java notes that I have written to learn new concepts and techniques."/>
 		<meta property="og:image" content="http://localhost:8820//img/yosemite.jpg" />
         
         <!--Twitter card -->
         
         <meta name="twitter:card" content="summary_large_image">
-		<meta name="twitter:title" content="Java Data Types and Variables">
+		<meta name="twitter:title" content="Linked List">
 		<meta name="twitter:creator" content="@omaarchaar">
 		<meta name="twitter:description" content="Java Jottings is a collection of small Java notes that I have written to learn new concepts and techniques.">
 		<meta name="twitter:image" content="http://localhost:8820//img/yosemite.jpg">
@@ -81,7 +81,7 @@
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                         <div class="post-heading">
-                            <h1>Java Data Types and Variables</h1>
+                            <h1>Linked List</h1>
                             
                             <span class="meta">Posted by <b>Omar Chaar</b> on 
                                 April 01, 2023
@@ -98,19 +98,65 @@
         <article>
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><p>Java is a strongly-typed language, which means that all variables must have a declared data type. Variables are used to store values in memory. In Java, you declare a variable by specifying its data type and name.</p>
-<h3>Primitive vs Non-Primitive</h3>
-<p>Java has two categories of data types: primitive types and reference types.</p>
-<h4>Primitive</h4>
-<p>Primitive types are built-in types that represent simple values, such as int, float, double, bool and char.</p>
-<h4>Non-Primitive or Reference</h4>
-<p>Reference types are more complex types that represent Objects, such as Strings, arrays and user-defined classes.</p>
-<h3>Initialization</h3>
-<p>Variables can be initialized with a value when they are declared, or they can be assigned a value later in the program.</p>
-<pre><code class="language-java">int num1 = 10; // declare and initialize an integer variable
-double num2; // declare a double variable
-num2 = 3.14; // assign a value to the double variable
-String name = &quot;John&quot;; // declare and initialize a string variable
+                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><ul>
+<li>Linked list is a dynamic data structure in which the elements are not stored at contiguous memory locations.</li>
+<li>In a linked list, each node contains a data element and a reference (link) to the next node in the sequence.</li>
+<li>A linked list can be singly-linked (each node only has a reference to the next node) or doubly-linked (each node has a reference to both the next and previous nodes).</li>
+<li>Unlike arrays, linked lists do not have a fixed size and can grow and shrink on demand.</li>
+<li>Insertion and deletion of elements at the beginning or end of a linked list are efficient operations with O(1) time complexity.</li>
+<li>However, accessing an element at a specific index in a linked list requires traversing the list from the beginning until the desired index is reached, resulting in a time complexity of O(n).</li>
+<li>Java provides a built-in implementation of linked lists through the LinkedList class in the java.util package.</li>
+<li>The LinkedList class provides methods for adding, removing, and accessing elements in the list, as well as methods for iterating over the elements in the list.</li>
+<li>However, the LinkedList class is not thread-safe, and concurrent modifications to the list can lead to undefined behavior.</li>
+<li>If thread safety is required, the java.util.concurrent package provides a thread-safe implementation of linked lists through the ConcurrentLinkedDeque class.</li>
+</ul>
+<pre><code class="language-java">public class LinkedListNode {
+    int val;
+    LinkedListNode next;
+    
+    public LinkedListNode(int val) {
+        this.val = val;
+        this.next = null;
+    }
+}
+
+public class LinkedList {
+    LinkedListNode head;
+
+    public LinkedList() {
+        this.head = null;
+    }
+
+    public void add(int val) {
+        LinkedListNode node = new LinkedListNode(val);
+        if (head == null) {
+            head = node;
+        } else {
+            LinkedListNode curr = head;
+            while (curr.next != null) {
+                curr = curr.next;
+            }
+            curr.next = node;
+        }
+    }
+
+    public void printList() {
+        LinkedListNode curr = head;
+        while (curr != null) {
+            System.out.print(curr.val + &quot; &quot;);
+            curr = curr.next;
+        }
+        System.out.println();
+    }
+}
+
+// Example usage:
+LinkedList list = new LinkedList();
+list.add(1);
+list.add(2);
+list.add(3);
+list.printList(); // Output: 1 2 3
+
 </code></pre>
 </div>
                 </div>
