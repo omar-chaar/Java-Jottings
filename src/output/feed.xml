@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Clean Blog</title>
+    <title>Java Jottings</title>
     <link>http://localhost:8820/</link>
     <atom:link href="http://localhost:8820//feed.xml" rel="self" type="application/rss+xml" />
-    <description>Bootstrap based template for JBake.</description>
+    <description></description>
     <language>en-gb</language>
-    <pubDate>Sat, 1 Apr 2023 20:57:58 +0300</pubDate>
-    <lastBuildDate>Sat, 1 Apr 2023 20:57:58 +0300</lastBuildDate>
+    <pubDate>Sat, 1 Apr 2023 21:06:44 +0300</pubDate>
+    <lastBuildDate>Sat, 1 Apr 2023 21:06:44 +0300</lastBuildDate>
 
     <item>
       <title>Using File APIs</title>
