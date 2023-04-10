@@ -1,5 +1,7 @@
 # Java Jottings
 
+![Badge](https://visitor-counter-badge.vercel.app/api/omar-chaar/java-jottings/)
+
 Java Jottings is a project for documenting and sharing useful Java programming tips, tricks, and insights. The project uses JBake to build and generate static HTML from MARKDOWN pages that can be easily hosted on any web server.
 
 ## Getting Started
