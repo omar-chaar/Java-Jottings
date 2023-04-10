@@ -105,46 +105,9 @@
                             </a>
                             <p class="post-meta">
                                 Posted by <b>Omar Chaar</b>
-                                on <span>April 01, 2023</span>
+                                on <span>April 10, 2023</span>
                                 </p>
-                            <pre><code class="language-java">import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
-import java.util.List; 
-
-public class App {
-    public static void main(String[] args) throws Exception {
-        //Writing files 
-		String text = &quot;This is a test&quot;;
-        try{
-            Files.write(Paths.get(&quot;file.txt&quot;), text.getBytes(), StandardOpenOption.CREATE);
-            System.out.println(&quot;File wrote successfully&quot;);
-        } catch (IOException exception){
-            System.out.println(&quot;it wasn't possible to write the file&quot;);
-        }
-        
-        //Reading files
-        try{
-            List&lt;String&gt; textRead = Files.readAllLines(Paths.get(&quot;file.txt&quot;));
-            for(String line: textRead)
-                System.out.println(line);
-		} catch (IOException exception){
-            System.out.println(&quot;it wasn't possible to read the file&quot;);
-        } 
-        //Manipulating Paths
-        Path path = Paths.get(&quot;.&quot;,&quot;file.txt&quot;);
-        
-        //Deleting
-        try{
-	        Files.delete(path);
-        }catch (IOException exception){
-            System.out.println(&quot;it wasn't possible to delete the file&quot;);
-        }     
-	}
-}
-</code></p>
+                            <p>The Java Files API provides a set of classes and methods that allow Java programs to interact with the file system. It allows you to perform common file operations such as reading, writing, and deleting files.</p>
                         </div>
                         <hr/>
                     
