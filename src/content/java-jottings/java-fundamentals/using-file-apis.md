@@ -4,47 +4,8 @@ status=published
 group=java-fundamentals
 ~~~~~~
 
-## Sample Code
+The Java Files API provides a set of classes and methods that allow Java programs to interact with the file system. It allows you to perform common file operations such as reading, writing, and deleting files.
 
-```java
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
-import java.util.List; 
-
-public class App {
-    public static void main(String[] args) throws Exception {
-        //Writing files 
-		String text = "This is a test";
-        try{
-            Files.write(Paths.get("file.txt"), text.getBytes(), StandardOpenOption.CREATE);
-            System.out.println("File wrote successfully");
-        } catch (IOException exception){
-            System.out.println("it wasn't possible to write the file");
-        }
-        
-        //Reading files
-        try{
-            List<String> textRead = Files.readAllLines(Paths.get("file.txt"));
-            for(String line: textRead)
-                System.out.println(line);
-		} catch (IOException exception){
-            System.out.println("it wasn't possible to read the file");
-        } 
-        //Manipulating Paths
-        Path path = Paths.get(".","file.txt");
-        
-        //Deleting
-        try{
-	        Files.delete(path);
-        }catch (IOException exception){
-            System.out.println("it wasn't possible to delete the file");
-        }     
-	}
-}
-```
 
 ### `java.io.File` vs `java.nio.file.Path`
 Java has two file APIs.
@@ -142,3 +103,47 @@ public class PathExample {
 
 When working with files in Java, it is important to properly handle exceptions and close files when you are done with them. It is also a good practice to use try-with-resources statements to automatically close files, and to use appropriate file permissions to ensure the security of your files.
 
+
+## Full Sample Code
+
+The code bellow used try catch as best practices 
+
+```java
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
+import java.util.List; 
+
+public class App {
+    public static void main(String[] args) throws Exception {
+        //Writing files 
+		String text = "This is a test";
+        try{
+            Files.write(Paths.get("file.txt"), text.getBytes(), StandardOpenOption.CREATE);
+            System.out.println("File wrote successfully");
+        } catch (IOException exception){
+            System.out.println("it wasn't possible to write the file");
+        }
+        
+        //Reading files
+        try{
+            List<String> textRead = Files.readAllLines(Paths.get("file.txt"));
+            for(String line: textRead)
+                System.out.println(line);
+		} catch (IOException exception){
+            System.out.println("it wasn't possible to read the file");
+        } 
+        //Manipulating Paths
+        Path path = Paths.get(".","file.txt");
+        
+        //Deleting
+        try{
+	        Files.delete(path);
+        }catch (IOException exception){
+            System.out.println("it wasn't possible to delete the file");
+        }     
+	}
+}
+```
