@@ -3,7 +3,7 @@
 
     <head>
         <meta charset="utf-8">
-        <title>Maps in Java</title>
+        <title>LinkedList</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Java Jottings is a collection of small Java notes that I have written to learn new concepts and techniques.">
         <meta name="author" content="Omar Chaar">
@@ -12,14 +12,14 @@
         
         <!--Facebook Card-->
 		<meta property="og:type" content="article" />
-		<meta property="og:title"  content="Maps in Java" />
+		<meta property="og:title"  content="LinkedList" />
 		<meta property="og:description" content="Java Jottings is a collection of small Java notes that I have written to learn new concepts and techniques."/>
 		<meta property="og:image" content="http://localhost:8820//img/yosemite.jpg" />
         
         <!--Twitter card -->
         
         <meta name="twitter:card" content="summary_large_image">
-		<meta name="twitter:title" content="Maps in Java">
+		<meta name="twitter:title" content="LinkedList">
 		<meta name="twitter:creator" content="@omaarchaar">
 		<meta name="twitter:description" content="Java Jottings is a collection of small Java notes that I have written to learn new concepts and techniques.">
 		<meta name="twitter:image" content="http://localhost:8820//img/yosemite.jpg">
@@ -146,7 +146,7 @@
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                         <div class="post-heading">
-                            <h1>Maps in Java</h1>
+                            <h1>LinkedList</h1>
                             
                             
                         </div>
@@ -159,68 +159,68 @@
         <article>
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><p>A Map is a collection that stores key-value pairs, where each key is unique.</p>
-<h3>Key and Values</h3>
-<p>Key and Value Types: The key and value types in a Map can be any non-null object. It is important to choose appropriate types for the key and value based on the requirements of the program.</p>
-<h3>Adding and Retrieving Elements</h3>
-<p>You can add and retrieve elements from a Map using the put() and get() methods, respectively. The get method takes a key as an argument and returns the corresponding value.</p>
-<h3>Remove</h3>
-<p>To remove an element from a Map, you can use the remove() method using the key.</p>
-<h3>Iterate over</h3>
-<p>You can iterate over the keys or values in a Map using the keySet() and values() methods, respectively.</p>
-<h3>Different types of maps</h3>
-<ol>
-<li>
-<p>Hash Tables - A hash table based implementation of the Map interface. It allows null values and keys, but does not maintain any order.</p>
-</li>
-<li>
-<p>TreeMap - A Red-Black tree based implementation of the Map interface. It maintains the keys in sorted order and does not allow null keys but allows null values.</p>
-</li>
-<li>LinkedHashMap - A hash table based implementation of the Map interface that maintains insertion order. It allows null values and keys.</li>
-<li>
-<p>WeakHashMap - A hash table based implementation of the Map interface that uses weak references to hold its keys. This means that if a key is no longer referenced, it can be garbage collected even if it is still in the map.</p>
-</li>
-<li>
-<p>EnumMap - A specialized implementation of the Map interface for use with enum keys. It is more efficient than other Map implementations for enum keys and does not allow null keys (but allows null values).</p>
-</li>
-<li>
-<p>IdentityHashMap - A hash table based implementation of the Map interface that uses reference equality to compare keys. It allows null keys but does not compare keys using their equals() method.</p>
-</li>
-</ol>
-<h3>Code example</h3>
-<pre><code class="language-java">import java.util.HashMap;
-import java.util.Map;
-
-public class MapExample {
-    public static void main(String[] args) {
-        // Create a new HashMap to store key-value pairs
-        Map&lt;String, Integer&gt; map = new HashMap&lt;&gt;();
-
-        // Add key-value pairs to the map
-        map.put(&quot;Alice&quot;, 25);
-        map.put(&quot;Bob&quot;, 30);
-        map.put(&quot;Charlie&quot;, 35);
-
-        // Retrieve values from the map using keys
-        int aliceAge = map.get(&quot;Alice&quot;);
-        int bobAge = map.get(&quot;Bob&quot;);
-
-        // Print the retrieved values
-        System.out.println(&quot;Alice is &quot; + aliceAge + &quot; years old.&quot;);
-        System.out.println(&quot;Bob is &quot; + bobAge + &quot; years old.&quot;);
-
-        // Remove a key-value pair from the map
-        map.remove(&quot;Charlie&quot;);
-
-        // Iterate over the keys and values in the map
-        for (String name : map.keySet()) {
-            int age = map.get(name);
-            System.out.println(name + &quot; is &quot; + age + &quot; years old.&quot;);
-        }
+                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><p>A linked list is a data structure that consists of a collection of nodes, where each node contains a value and a reference to the next node in the list.</p>
+<p>Unlike arrays, which have a fixed size, linked lists can dynamically grow or shrink as elements are added or removed. This makes them a flexible data structure for implementing certain types of algorithms, such as graph traversal and dynamic memory allocation.</p>
+<p>However, accessing a particular element in a linked list can be slower than with an array, as each element must be traversed in order until the desired element is found.</p>
+<h2>Types of Linked Lists</h2>
+<ul>
+<li>Singly Linked List: Each node contains data and a reference to the next node only.</li>
+<li>Doubly Linked List: Each node contains data and references to both the previous and the next nodes.</li>
+<li>Circular Linked List: The last node in the list points to the first node.</li>
+</ul>
+<h2>Declaration</h2>
+<p>To use linked lists in Java, you need to create a class that represents the nodes and another class that represents the list. Here's an example of how to declare a linked list:</p>
+<pre><code class="language-java">class Node {
+    int data;
+    Node next;
+ 
+    public Node(int data) {
+        this.data = data;
+        this.next = null;
     }
 }
-
+ 
+class LinkedList {
+    Node head;
+ 
+    public LinkedList() {
+        this.head = null;
+    }
+}
 </code></pre>
+<h2>Methods</h2>
+<h3>1. Adding Elements</h3>
+<ul>
+<li><code>void addFirst(int data)</code> - Adds the specified element to the beginning of the list.</li>
+<li><code>void addLast(int data)</code> - Adds the specified element to the end of the list.</li>
+<li><code>void addAtIndex(int index, int data)</code> - Adds the specified element at the specified position in the list.</li>
+</ul>
+<h3>2. Removing Elements</h3>
+<ul>
+<li><code>void removeFirst()</code> - Removes the first element from the list.</li>
+<li><code>void removeLast()</code> - Removes the last element from the list.</li>
+<li><code>void removeAtIndex(int index)</code> - Removes the element at the specified position in the list.</li>
+</ul>
+<h3>3. Retrieving Elements</h3>
+<ul>
+<li><code>int getFirst()</code> - Returns the first element in the list.</li>
+<li><code>int getLast()</code> - Returns the last element in the list.</li>
+<li><code>int getAtIndex(int index)</code> - Returns the element at the specified position in the list.</li>
+</ul>
+<h3>4. Other Methods</h3>
+<ul>
+<li><code>boolean isEmpty()</code> - Returns <code>true</code> if the list is empty, otherwise <code>false</code>.</li>
+<li><code>int size()</code> - Returns the number of elements in the list.</li>
+<li><code>void printList()</code> - Prints the elements in the list.</li>
+</ul>
+<h2>Best Practices</h2>
+<ul>
+<li>Always initialize the head to null.</li>
+<li>Use the addFirst() method for stack-like behavior.</li>
+<li>Use the addLast() method for queue-like behavior.</li>
+<li>Avoid using the get() method as it requires iterating over the entire list.</li>
+<li>Always check if the list is empty before calling the remove() method.</li>
+</ul>
 </div>
                 </div>
             </div>
