@@ -3,7 +3,7 @@
 
     <head>
         <meta charset="utf-8">
-        <title>Queues</title>
+        <title>Using File APIs</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Java Jottings is a collection of small Java notes that I have written to learn new concepts and techniques.">
         <meta name="author" content="Omar Chaar">
@@ -12,27 +12,27 @@
         
         <!--Facebook Card-->
 		<meta property="og:type" content="article" />
-		<meta property="og:title"  content="Queues" />
+		<meta property="og:title"  content="Using File APIs" />
 		<meta property="og:description" content="Java Jottings is a collection of small Java notes that I have written to learn new concepts and techniques."/>
 		<meta property="og:image" content="http://localhost:8820//img/yosemite.jpg" />
         
         <!--Twitter card -->
         
         <meta name="twitter:card" content="summary_large_image">
-		<meta name="twitter:title" content="Queues">
+		<meta name="twitter:title" content="Using File APIs">
 		<meta name="twitter:creator" content="@omaarchaar">
 		<meta name="twitter:description" content="Java Jottings is a collection of small Java notes that I have written to learn new concepts and techniques.">
 		<meta name="twitter:image" content="http://localhost:8820//img/yosemite.jpg">
 		</th:if>
         <!-- Bootstrap Core CSS -->
-        <link href="../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
         <!-- Theme CSS -->
-        <link href="../../css/coderay.css" rel="stylesheet">
-        <link href="../../css/asciidoctor.css" rel="stylesheet">
-        <link href="../../css/clean-blog.css" rel="stylesheet">
+        <link href="../css/coderay.css" rel="stylesheet">
+        <link href="../css/asciidoctor.css" rel="stylesheet">
+        <link href="../css/clean-blog.css" rel="stylesheet">
         <!-- Custom Fonts -->
-        <link href="../../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Lato:300&amp;text=Java%20Jottings'
            rel='stylesheet' type='text/css'>
@@ -44,7 +44,7 @@
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
 
-        <link rel="shortcut icon" href="../../favicon.png"/>
+        <link rel="shortcut icon" href="../favicon.png"/>
     </head>
 
     <body>
@@ -57,7 +57,7 @@
                         <span class="sr-only">Toggle navigation</span>
                         Menu <i class="fa fa-bars"></i>
                     </button>
-                    <a class="navbar-brand" href="../../index.html">Java Jottings</a>
+                    <a class="navbar-brand" href="../index.html">Java Jottings</a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -82,19 +82,19 @@
                                     
                                 </li>
                                 <li>
-                                    <a href="../../java-jottings/java-fundamentals/data-types-and-variables.html">Java Data Types and Variables</a>
+                                    <a href="../java-fundamentals/data-types-and-variables.html">Java Data Types and Variables</a>
                                 </li>
                                 <li>
-                                    <a href="../../java-jottings/java-fundamentals/using-file-apis.html">Using File APIs</a>
+                                    <a href="../java-fundamentals/using-file-apis.html">Using File APIs</a>
                                 </li>
                                 <li>
-                                    <a href="../../java-jottings/java-fundamentals/java-packages.html">Packages</a>
+                                    <a href="../java-fundamentals/java-packages.html">Packages</a>
                                 </li>
                                 <li>
-                                    <a href="../../java-jottings/java-fundamentals/main-method.html">main Method</a>
+                                    <a href="../java-fundamentals/main-method.html">main Method</a>
                                 </li>
                                 <li>
-                                    <a href="../../java-jottings/java-fundamentals/java-basic-syntax.html">Java Basic Syntax</a>
+                                    <a href="../java-fundamentals/java-basic-syntax.html">Java Basic Syntax</a>
                                 </li>
                                 
                             </ul>
@@ -103,16 +103,16 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Data Structures<b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <a href="../../java-jottings/data-structures/Linked+List.html">LinkedList</a>
+                                    <a href="../data-structures/Linked+List.html">LinkedList</a>
                                 </li>
                                 <li>
-                                    <a href="../../java-jottings/data-structures/Queues.html">Queues</a>
+                                    <a href="../data-structures/Queues.html">Queues</a>
                                 </li>
                                 <li>
-                                    <a href="../../java-jottings/data-structures/Stacks.html">Stacks</a>
+                                    <a href="../data-structures/Stacks.html">Stacks</a>
                                 </li>
                                 <li>
-                                    <a href="../../java-jottings/data-structures/Maps.html">Maps in Java</a>
+                                    <a href="../data-structures/Maps.html">Maps in Java</a>
                                 </li>
                                 <li>
                                     
@@ -141,12 +141,12 @@
 
         <!-- Page Header -->
         <!-- Set your background image for this header on the line below. -->
-        <header class="intro-header" style="background-image: url(&#39;../../img/index-cover.jpg&#39;) ; background-color:#101010">
+        <header class="intro-header" style="background-image: url(&#39;../img/index-cover.jpg&#39;) ; background-color:#101010">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                         <div class="post-heading">
-                            <h1>Queues</h1>
+                            <h1>Using File APIs</h1>
                             
                             
                         </div>
@@ -159,42 +159,119 @@
         <article>
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><p>Queues are a data structure that work on the principle of &quot;First-In-First-Out&quot; (FIFO), meaning that the first element added to the queue will be the first one to be removed. New elements are added at one end of the queue, called the &quot;rear&quot;, and elements are removed from the other end of the queue, called the &quot;front&quot;.</p>
-<p>Queues are useful when you need to manage a collection of elements in a specific order, such as when you want to process tasks in the order they were received. In Java, queues are implemented as interfaces with multiple implementations, such as LinkedList, PriorityQueue, and ArrayDeque.</p>
-<p>In Java, queues are implemented using the <code>java.util.Queue</code> interface, which provides a set of methods for adding, removing, and inspecting elements in the queue.</p>
-<h2>Declaration</h2>
-<p>To use a queue in Java, you need to import the <code>java.util.Queue</code> interface. Here's an example of how to declare a queue:</p>
-<pre><code class="language-java">Queue&lt;Integer&gt; queue = new LinkedList&lt;Integer&gt;();
+                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><p>The Java Files API provides a set of classes and methods that allow Java programs to interact with the file system. It allows you to perform common file operations such as reading, writing, and deleting files.</p>
+<h3><code>java.io.File</code> vs <code>java.nio.file.Path</code></h3>
+<p>Java has two file APIs.<br />
+- The original <code>java.io.File</code> API, available since Java 1.0 (1996).<br />
+- The newer <code>java.nio.file.Path</code> API, available since Java 1.7 (2011).</p>
+<h2>File vs Path API</h2>
+<p>Nevertheless, <code>java.nio.file.Path</code> does everything <code>java.io.File</code> can, but generally in a better way and more. A few examples:<br />
+- File Features: The new classes support symlinks, proper file attributes and metadata support (think: PosixFileAttributes), ACLs and more.<br />
+- Better usage: E.g. when deleting a file, you get an exception with a meaningful error message (no such file, file locked, etc.), instead of a simple boolean saying <code>false</code>.<br />
+- Decoupling: Enabling support for in-memory file systems, which we’ll cover later.</p>
+<h3>Reading Files</h3>
+<p>To read the contents of a file in Java, you can use the <code>java.nio.file.Files</code> class, which provides a number of static methods for working with files. The most common method for reading a file is <code>readAllLines</code>, which reads all the lines in a file and returns them as a list of strings:</p>
+<pre><code class="language-java">import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.List;
+
+public class ReadFileExample {
+    public static void main(String[] args) throws Exception {
+        List&lt;String&gt; lines = Files.readAllLines(Paths.get(&quot;folder\\file.txt&quot;));
+        for (String line : lines) {
+            System.out.println(line);
+        }
+    }
+}
 </code></pre>
-<h2>Methods</h2>
-<h3>1. Adding Elements</h3>
-<ul>
-<li><code>add(E e)</code> - Adds the specified element to the back of the queue.</li>
-<li><code>offer(E e)</code> - Inserts the specified element at the back of the queue.</li>
-</ul>
-<h3>2. Removing Elements</h3>
-<ul>
-<li><code>remove()</code> - Removes and returns the element at the front of the queue.</li>
-<li><code>poll()</code> - Removes and returns the element at the front of the queue, or returns <code>null</code> if the queue is empty.</li>
-</ul>
-<h3>3. Inspecting Elements</h3>
-<ul>
-<li><code>element()</code> - Retrieves, but does not remove, the element at the front of the queue.</li>
-<li><code>peek()</code> - Retrieves, but does not remove, the element at the front of the queue, or returns <code>null</code> if the queue is empty.</li>
-</ul>
-<h3>4. Other Methods</h3>
-<ul>
-<li><code>size()</code> - Returns the number of elements in the queue.</li>
-<li><code>isEmpty()</code> - Returns <code>true</code> if the queue is empty, otherwise <code>false</code>.</li>
-<li><code>iterator()</code> - Returns an iterator over the elements in the queue.</li>
-</ul>
-<h2>Best Practices</h2>
-<ul>
-<li>Use the <code>add()</code> method for adding elements to the queue, as it can throw an exception if the queue is full.</li>
-<li>Use the <code>offer()</code> method for adding elements to the queue if you want to avoid the exception.</li>
-<li>Always check if the queue is empty before calling the <code>remove()</code> or <code>element()</code> methods, as they can throw an exception if the queue is empty.</li>
-<li>Use the <code>poll()</code> and <code>peek()</code> methods if you want to avoid the exception and return <code>null</code> if the queue is empty.</li>
-</ul>
+<h3>Writing Files</h3>
+<p>To write to a file in Java, you can use the <code>java.nio.file.Files</code> class again, this time with the <code>write</code> method:</p>
+<pre><code class="language-java">import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
+
+public class WriteFileExample {
+    public static void main(String[] args) throws Exception {
+        String text = &quot;Hello, world!&quot;;
+        Files.write(Paths.get(&quot;folder\\file.txt&quot;), text.getBytes(), StandardOpenOption.CREATE);
+    }
+}
+</code></pre>
+<h3>Deleting Files and Directories</h3>
+<p>To delete a file in Java, you can use the <code>java.nio.file.Files</code> class with the <code>delete</code> method:</p>
+<pre><code class="language-java">import java.nio.file.Files;
+import java.nio.file.Paths;
+
+public class DeleteFileExample {
+    public static void main(String[] args) throws Exception {
+        Files.delete(Paths.get(&quot;folder\\file.txt&quot;));
+    }
+}
+</code></pre>
+<p>To delete a directory, you can use the <code>java.nio.file.Files</code> class again, this time with the <code>delete</code> method and a directory path:</p>
+<pre><code class="language-java">import java.nio.file.Files;
+import java.nio.file.Paths;
+
+public class DeleteDirectoryExample {
+    public static void main(String[] args) throws Exception {
+        Files.delete(Paths.get(&quot;folder&quot;));
+    }
+}
+</code></pre>
+<h3>Manipulating Paths</h3>
+<p>When working with files and directories, you often need to manipulate paths. Java provides the <code>java.nio.file.Path</code> interface for working with paths. You can create a path using the <code>Paths.get</code> method:</p>
+<pre><code class="language-java">import java.nio.file.Path;
+import java.nio.file.Paths;
+
+public class PathExample {
+    public static void main(String[] args) throws Exception {
+        Path path = Paths.get(&quot;directory&quot;, &quot;file.txt&quot;);
+        System.out.println(path.toString());
+    }
+}
+</code></pre>
+<h3>Best Practices</h3>
+<p>When working with files in Java, it is important to properly handle exceptions and close files when you are done with them. It is also a good practice to use try-with-resources statements to automatically close files, and to use appropriate file permissions to ensure the security of your files.</p>
+<h2>Full Sample Code</h2>
+<p>The code bellow used try catch as best practices</p>
+<pre><code class="language-java">import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
+import java.util.List; 
+
+public class App {
+    public static void main(String[] args) throws Exception {
+        //Writing files 
+		String text = &quot;This is a test&quot;;
+        try{
+            Files.write(Paths.get(&quot;file.txt&quot;), text.getBytes(), StandardOpenOption.CREATE);
+            System.out.println(&quot;File wrote successfully&quot;);
+        } catch (IOException exception){
+            System.out.println(&quot;it wasn't possible to write the file&quot;);
+        }
+        
+        //Reading files
+        try{
+            List&lt;String&gt; textRead = Files.readAllLines(Paths.get(&quot;file.txt&quot;));
+            for(String line: textRead)
+                System.out.println(line);
+		} catch (IOException exception){
+            System.out.println(&quot;it wasn't possible to read the file&quot;);
+        } 
+        //Manipulating Paths
+        Path path = Paths.get(&quot;.&quot;,&quot;file.txt&quot;);
+        
+        //Deleting
+        try{
+	        Files.delete(path);
+        }catch (IOException exception){
+            System.out.println(&quot;it wasn't possible to delete the file&quot;);
+        }     
+	}
+}
+</code></pre>
 </div>
                 </div>
             </div>
@@ -234,13 +311,13 @@
         </footer>
 
         <!-- jQuery -->
-        <script src="../../vendor/jquery/jquery.min.js"></script>
+        <script src="../vendor/jquery/jquery.min.js"></script>
 
         <!-- Bootstrap Core JavaScript -->
-        <script src="../../vendor/bootstrap/js/bootstrap.min.js" ></script>
+        <script src="../vendor/bootstrap/js/bootstrap.min.js" ></script>
 
         <!-- Theme JavaScript -->
-        <script src="../../js/clean-blog.min.js"></script>
+        <script src="../js/clean-blog.min.js"></script>
 
         
 
