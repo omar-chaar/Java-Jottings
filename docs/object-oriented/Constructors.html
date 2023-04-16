@@ -3,7 +3,7 @@
 
     <head>
         <meta charset="utf-8">
-        <title>Stacks</title>
+        <title>Constructors</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Java Jottings is a collection of small Java notes that I have written to learn new concepts and techniques.">
         <meta name="author" content="Omar Chaar">
@@ -12,14 +12,14 @@
         
         <!--Facebook Card-->
 		<meta property="og:type" content="article" />
-		<meta property="og:title"  content="Stacks" />
+		<meta property="og:title"  content="Constructors" />
 		<meta property="og:description" content="Java Jottings is a collection of small Java notes that I have written to learn new concepts and techniques."/>
 		<meta property="og:image" content="http://localhost:8820//img/yosemite.jpg" />
         
         <!--Twitter card -->
         
         <meta name="twitter:card" content="summary_large_image">
-		<meta name="twitter:title" content="Stacks">
+		<meta name="twitter:title" content="Constructors">
 		<meta name="twitter:creator" content="@omaarchaar">
 		<meta name="twitter:description" content="Java Jottings is a collection of small Java notes that I have written to learn new concepts and techniques.">
 		<meta name="twitter:image" content="http://localhost:8820//img/yosemite.jpg">
@@ -206,7 +206,7 @@
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                         <div class="post-heading">
-                            <h1>Stacks</h1>
+                            <h1>Constructors</h1>
                             
                             
                         </div>
@@ -219,32 +219,64 @@
         <article>
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><p>A stack is a linear data structure that follows the Last-In-First-Out (LIFO) principle. In other words, the last element added to the stack will be the first one to be removed.</p>
-<p>In Java, the <code>java.util.Stack</code> class is available to implement the stack data structure. It extends the <code>Vector</code> class and provides all the stack operations such as <code>push</code>, <code>pop</code>, <code>peek</code>, <code>search</code>, etc.</p>
-<h2>Creating a Stack in Java</h2>
-<p>To create a stack in Java, you can simply create an instance of the <code>java.util.Stack</code> class as follows:</p>
-<pre><code class="language-java">Stack&lt;Integer&gt; stack = new Stack&lt;&gt;();
+                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><p>A constructor is a special method that is used to create and initialize objects in Java. Constructors have the same name as the class and do not have a return type. In this note, we will discuss the different types of constructors in Java.</p>
+<h2>Default Constructor</h2>
+<p>A default constructor is a constructor that is automatically created by the compiler if no other constructor is defined in the class. It takes no arguments and initializes all data members to their default values.</p>
+<pre><code class="language-java">public class MyClass {
+    // Default constructor
+    public MyClass() {
+        // Initialization code here
+    }
+}
 </code></pre>
-<p>Here, we have created a stack of integers using the generic <code>Stack</code> class. You can replace <code>Integer</code> with any other object type.</p>
-<h2>Stack Operations</h2>
-<p>The following are the main stack operations that can be performed using the <code>java.util.Stack</code> class:</p>
-<h3>Push</h3>
-<p>The <code>push</code> operation adds an element to the top of the stack. It can be done using the <code>push</code> method as follows:</p>
-<pre><code class="language-java">stack.push(10);
+<h2>Parameterized Constructor</h2>
+<p>A parameterized constructor is a constructor that takes one or more arguments. It is used to initialize the data members of the object with the values passed as arguments.</p>
+<pre><code class="language-java">public class MyClass {
+    // Parameterized constructor
+    public MyClass(int parameterOne, int parameterTwo) {
+        // Initialization code here
+    }
+}
 </code></pre>
-<h3>Pop</h3>
-<p>The <code>pop</code> operation removes and returns the top element of the stack. It can be done using the <code>pop</code> method as follows:</p>
-<pre><code class="language-java">int topElement = stack.pop();
+<h2>Copy Constructor</h2>
+<p>A copy  constructor creates a new object by copying the values of an existing object. I takes an object of the same class as an argument and initializes the data members of the new object with the values of the existing object.</p>
+<pre><code class="language-java">public class MyClass{
+	//Copy Constructor
+	public MyClass(MyClass object){
+		//Initialization code here using getters
+	}
+}
 </code></pre>
-<h3>Peek</h3>
-<p>The <code>peek</code> operation returns the top element of the stack without removing it. It can be done using the <code>peek</code> method as follows:</p>
-<pre><code class="language-java">int topElement = stack.peek();
+<h2>Static Constructor</h2>
+<p>In Java, there is no concept of a static constructor. However, we can use a static block to initialize static data members of a class.</p>
+<pre><code class="language-java">public class MyClass {
+    static int x;
+    
+    // Static block
+    static {
+        x = 10;
+    }
+}
 </code></pre>
-<h3>Search</h3>
-<p>The <code>search</code> operation searches for an element in the stack and returns its position. The position is calculated as the distance from the top of the stack. If the element is not present in the stack, it returns <code>-1</code>. It can be done using the <code>search</code> method as follows:</p>
-<pre><code class="language-java">int position = stack.search(10);
-</code></pre>
-<p>In conclusion, a stack is a useful data structure that can be easily implemented in Java using the <code>java.util.Stack</code> class. It provides all the necessary stack operations such as <code>push</code>, <code>pop</code>, <code>peek</code>, and <code>search</code>.</p>
+<p>The static block is executed only once, when the class is loaded into memory.</p>
+<h2>Best Practices</h2>
+<ol>
+<li>
+<p>Keep constructors simple: Constructors should only be responsible for initializing instance variables and setting up the object. It's generally a bad practice to do a lot of work in a constructor, such as making network calls or performing expensive calculations.</p>
+</li>
+<li>
+<p>Use constructor chaining: If you have multiple constructors, use constructor chaining to avoid duplicating code. This means that one constructor calls another constructor, which then calls another constructor, and so on, until all the necessary initialization is done.</p>
+</li>
+<li>
+<p>Use meaningful parameter names: When defining a constructor with parameters, use meaningful names that describe what each parameter represents. This makes your code more readable and easier to understand.</p>
+</li>
+<li>
+<p>Use default values: Consider providing default values for constructor parameters, to make the constructor more flexible. For example, if you have a constructor that takes an integer value, you might provide a default value of zero.</p>
+</li>
+<li>
+<p>Avoid doing work that could fail in a constructor: Constructors should be used only for initialization, not for doing work that could fail. For example, if your constructor needs to read data from a file, it's better to move that code to a separate method that can handle exceptions and return a result.</p>
+</li>
+</ol>
 </div>
                 </div>
             </div>

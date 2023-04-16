@@ -3,7 +3,7 @@
 
     <head>
         <meta charset="utf-8">
-        <title>Stacks</title>
+        <title>Data Members</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Java Jottings is a collection of small Java notes that I have written to learn new concepts and techniques.">
         <meta name="author" content="Omar Chaar">
@@ -12,14 +12,14 @@
         
         <!--Facebook Card-->
 		<meta property="og:type" content="article" />
-		<meta property="og:title"  content="Stacks" />
+		<meta property="og:title"  content="Data Members" />
 		<meta property="og:description" content="Java Jottings is a collection of small Java notes that I have written to learn new concepts and techniques."/>
 		<meta property="og:image" content="http://localhost:8820//img/yosemite.jpg" />
         
         <!--Twitter card -->
         
         <meta name="twitter:card" content="summary_large_image">
-		<meta name="twitter:title" content="Stacks">
+		<meta name="twitter:title" content="Data Members">
 		<meta name="twitter:creator" content="@omaarchaar">
 		<meta name="twitter:description" content="Java Jottings is a collection of small Java notes that I have written to learn new concepts and techniques.">
 		<meta name="twitter:image" content="http://localhost:8820//img/yosemite.jpg">
@@ -206,7 +206,7 @@
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                         <div class="post-heading">
-                            <h1>Stacks</h1>
+                            <h1>Data Members</h1>
                             
                             
                         </div>
@@ -219,32 +219,79 @@
         <article>
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><p>A stack is a linear data structure that follows the Last-In-First-Out (LIFO) principle. In other words, the last element added to the stack will be the first one to be removed.</p>
-<p>In Java, the <code>java.util.Stack</code> class is available to implement the stack data structure. It extends the <code>Vector</code> class and provides all the stack operations such as <code>push</code>, <code>pop</code>, <code>peek</code>, <code>search</code>, etc.</p>
-<h2>Creating a Stack in Java</h2>
-<p>To create a stack in Java, you can simply create an instance of the <code>java.util.Stack</code> class as follows:</p>
-<pre><code class="language-java">Stack&lt;Integer&gt; stack = new Stack&lt;&gt;();
+                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><p>In Java, a data member is a variable that is associated with a class or an object. It can be a primitive data type, an object, or an array.</p>
+<h2>Types of Data Members</h2>
+<h3>1. Instance Variables</h3>
+<p>Instance variables are declared within a class but outside of any method. They are created when an object is instantiated and can be accessed using the object reference.</p>
+<pre><code class="language-java">public class MyClass {
+   int myInstanceVar; // instance variable
+   
+   public static void main(String[] args) {
+      MyClass obj1 = new MyClass();
+      MyClass obj2 = new MyClass();
+
+      obj1.myInstanceVar = 10;
+      obj2.myInstanceVar = 20;
+
+      System.out.println(obj1.myInstanceVar); // output: 10
+      System.out.println(obj2.myInstanceVar); // output: 20
+   }
+}
 </code></pre>
-<p>Here, we have created a stack of integers using the generic <code>Stack</code> class. You can replace <code>Integer</code> with any other object type.</p>
-<h2>Stack Operations</h2>
-<p>The following are the main stack operations that can be performed using the <code>java.util.Stack</code> class:</p>
-<h3>Push</h3>
-<p>The <code>push</code> operation adds an element to the top of the stack. It can be done using the <code>push</code> method as follows:</p>
-<pre><code class="language-java">stack.push(10);
+<h3>2. Class Variables</h3>
+<p>Class variables, also known as static variables, are declared with the <code>static</code> keyword. They belong to the class rather than any instance of the class.</p>
+<pre><code class="language-java">public class MyClass {
+   static int myClassVar; // class variable
+   
+   public static void main(String[] args) {
+      MyClass.myClassVar = 10;
+      System.out.println(MyClass.myClassVar); // output: 10
+   }
+}
 </code></pre>
-<h3>Pop</h3>
-<p>The <code>pop</code> operation removes and returns the top element of the stack. It can be done using the <code>pop</code> method as follows:</p>
-<pre><code class="language-java">int topElement = stack.pop();
+<h3>3. Local Variables</h3>
+<p>Local variables are declared within a method or a block of code. They have a limited scope and are only accessible within that block.</p>
+<pre><code class="language-java">public class MyClass {
+   public static void main(String[] args) {
+      int myLocalVar = 10; // local variable
+      System.out.println(myLocalVar); // output: 10
+   }
+}
 </code></pre>
-<h3>Peek</h3>
-<p>The <code>peek</code> operation returns the top element of the stack without removing it. It can be done using the <code>peek</code> method as follows:</p>
-<pre><code class="language-java">int topElement = stack.peek();
+<h3>4. Parameters</h3>
+<p>Parameters are variables that are passed into a method when it is called.</p>
+<pre><code class="language-java">public class MyClass {
+   public static void main(String[] args) {
+      int result = addNumbers(10, 20);
+      System.out.println(result); // output: 30
+   }
+
+   public static int addNumbers(int a, int b) { // parameters
+      return a + b;
+   }
+}
 </code></pre>
-<h3>Search</h3>
-<p>The <code>search</code> operation searches for an element in the stack and returns its position. The position is calculated as the distance from the top of the stack. If the element is not present in the stack, it returns <code>-1</code>. It can be done using the <code>search</code> method as follows:</p>
-<pre><code class="language-java">int position = stack.search(10);
+<h2>Access Modifiers</h2>
+<p>In Java, access modifiers can be used to specify the visibility of data members. There are four access modifiers:</p>
+<ul>
+<li><code>private</code>: Data members are only accessible within the same class.</li>
+<li><code>default</code> (no keyword): Data members are accessible within the same package.</li>
+<li><code>protected</code>: Data members are accessible within the same package and by subclasses outside of the package.</li>
+<li><code>public</code>: Data members are accessible from anywhere.</li>
+</ul>
+<pre><code class="language-java">public class MyClass {
+   private int myPrivateVar; // private data member
+   int myDefaultVar; // default data member
+   protected int myProtectedVar; // protected data member
+   public int myPublicVar; // public data member
+}
 </code></pre>
-<p>In conclusion, a stack is a useful data structure that can be easily implemented in Java using the <code>java.util.Stack</code> class. It provides all the necessary stack operations such as <code>push</code>, <code>pop</code>, <code>peek</code>, and <code>search</code>.</p>
+<h2>Best Practices</h2>
+<ul>
+<li>Use access modifiers to restrict access to data members as much as possible.</li>
+<li>Use instance variables to store object-specific data, and use class variables to store data that is shared among all objects of a class.</li>
+<li>Avoid using public data members, as they can be easily modified from outside the class, which can lead to unexpected behaviour. Instead, use getter and setter methods to access and modify the data.</li>
+</ul>
 </div>
                 </div>
             </div>
