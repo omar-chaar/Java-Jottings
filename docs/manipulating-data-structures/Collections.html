@@ -3,7 +3,7 @@
 
     <head>
         <meta charset="utf-8">
-        <title>Stacks</title>
+        <title>Collections</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Java Jottings is a collection of small Java notes that I have written to learn new concepts and techniques.">
         <meta name="author" content="Omar Chaar">
@@ -12,14 +12,14 @@
         
         <!--Facebook Card-->
 		<meta property="og:type" content="article" />
-		<meta property="og:title"  content="Stacks" />
+		<meta property="og:title"  content="Collections" />
 		<meta property="og:description" content="Java Jottings is a collection of small Java notes that I have written to learn new concepts and techniques."/>
 		<meta property="og:image" content="http://localhost:8820//img/yosemite.jpg" />
         
         <!--Twitter card -->
         
         <meta name="twitter:card" content="summary_large_image">
-		<meta name="twitter:title" content="Stacks">
+		<meta name="twitter:title" content="Collections">
 		<meta name="twitter:creator" content="@omaarchaar">
 		<meta name="twitter:description" content="Java Jottings is a collection of small Java notes that I have written to learn new concepts and techniques.">
 		<meta name="twitter:image" content="http://localhost:8820//img/yosemite.jpg">
@@ -284,7 +284,7 @@
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                         <div class="post-heading">
-                            <h1>Stacks</h1>
+                            <h1>Collections</h1>
                             
                             
                         </div>
@@ -297,32 +297,36 @@
         <article>
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><p>A stack is a linear data structure that follows the Last-In-First-Out (LIFO) principle. In other words, the last element added to the stack will be the first one to be removed.</p>
-<p>In Java, the <code>java.util.Stack</code> class is available to implement the stack data structure. It extends the <code>Vector</code> class and provides all the stack operations such as <code>push</code>, <code>pop</code>, <code>peek</code>, <code>search</code>, etc.</p>
-<h2>Creating a Stack in Java</h2>
-<p>To create a stack in Java, you can simply create an instance of the <code>java.util.Stack</code> class as follows:</p>
-<pre><code class="language-java">Stack&lt;Integer&gt; stack = new Stack&lt;&gt;();
-</code></pre>
-<p>Here, we have created a stack of integers using the generic <code>Stack</code> class. You can replace <code>Integer</code> with any other object type.</p>
-<h2>Stack Operations</h2>
-<p>The following are the main stack operations that can be performed using the <code>java.util.Stack</code> class:</p>
-<h3>Push</h3>
-<p>The <code>push</code> operation adds an element to the top of the stack. It can be done using the <code>push</code> method as follows:</p>
-<pre><code class="language-java">stack.push(10);
-</code></pre>
-<h3>Pop</h3>
-<p>The <code>pop</code> operation removes and returns the top element of the stack. It can be done using the <code>pop</code> method as follows:</p>
-<pre><code class="language-java">int topElement = stack.pop();
-</code></pre>
-<h3>Peek</h3>
-<p>The <code>peek</code> operation returns the top element of the stack without removing it. It can be done using the <code>peek</code> method as follows:</p>
-<pre><code class="language-java">int topElement = stack.peek();
-</code></pre>
-<h3>Search</h3>
-<p>The <code>search</code> operation searches for an element in the stack and returns its position. The position is calculated as the distance from the top of the stack. If the element is not present in the stack, it returns <code>-1</code>. It can be done using the <code>search</code> method as follows:</p>
-<pre><code class="language-java">int position = stack.search(10);
-</code></pre>
-<p>In conclusion, a stack is a useful data structure that can be easily implemented in Java using the <code>java.util.Stack</code> class. It provides all the necessary stack operations such as <code>push</code>, <code>pop</code>, <code>peek</code>, and <code>search</code>.</p>
+                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><p>The class collections consists exclusively of static methods that operate on or return collections. It contains polymorphic algorithms that operate on collections, &quot;wrappers&quot;, which return a new collection backed by a specified collection, and a few other odds and ends.</p>
+<p>The methods of this class all throw a NullPointerException if the collections or class objects provided to them are null.</p>
+<h2>Sorting Methods</h2>
+<ul>
+<li><code>sort(List&lt;T&gt; list)</code>: Sorts the specified list in ascending order using natural ordering of elements.</li>
+<li><code>sort(List&lt;T&gt; list, Comparator&lt;? super T&gt; c)</code>: Sorts the specified list according to the order induced by the specified comparator.</li>
+<li><code>reverse(List&lt;?&gt; list)</code>: Reverses the order of the elements in the specified list.</li>
+<li><code>shuffle(List&lt;?&gt; list)</code>: Randomly permutes the specified list.</li>
+</ul>
+<h2>Searching Methods</h2>
+<ul>
+<li><code>binarySearch(List&lt;? extends Comparable&lt;? super T&gt;&gt; list, T key)</code>: Searches the specified list for the specified object using the binary search algorithm.</li>
+<li><code>binarySearch(List&lt;? extends T&gt; list, T key, Comparator&lt;? super T&gt; c)</code>: Searches the specified list for the specified object using the binary search algorithm.</li>
+</ul>
+<h2>Synchronization Methods</h2>
+<ul>
+<li><code>synchronizedCollection(Collection&lt;T&gt; c)</code>: Returns a synchronized (thread-safe) collection backed by the specified collection.</li>
+<li><code>synchronizedList(List&lt;T&gt; list)</code>: Returns a synchronized (thread-safe) list backed by the specified list.</li>
+<li><code>synchronizedMap(Map&lt;K,V&gt; m)</code>: Returns a synchronized (thread-safe) map backed by the specified map.</li>
+<li><code>synchronizedSet(Set&lt;T&gt; s)</code>: Returns a synchronized (thread-safe) set backed by the specified set.</li>
+</ul>
+<h2>Miscellaneous Methods</h2>
+<ul>
+<li><code>copy(List&lt;? super T&gt; dest, List&lt;? extends T&gt; src)</code>: Copies all of the elements from one list into another.</li>
+<li><code>fill(List&lt;? super T&gt; list, T obj)</code>: Replaces all of the elements of the specified list with the specified element.</li>
+<li><code>frequency(Collection&lt;?&gt; c, Object o)</code>: Returns the number of elements in the specified collection equal to the specified object.</li>
+<li><code>max(Collection&lt;? extends T&gt; coll)</code>: Returns the maximum element of the given collection, according to the natural ordering of its elements.</li>
+<li><code>min(Collection&lt;? extends T&gt; coll)</code>: Returns the minimum element of the given collection, according to the natural ordering of its elements.</li>
+<li><code>replaceAll(List&lt;T&gt; list, T oldVal, T newVal)</code>: Replaces all occurrences of one specified value in a list with another specified value.</li>
+</ul>
 </div>
                 </div>
             </div>

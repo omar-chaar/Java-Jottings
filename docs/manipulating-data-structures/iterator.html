@@ -3,7 +3,7 @@
 
     <head>
         <meta charset="utf-8">
-        <title>Stacks</title>
+        <title>Iterator</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Java Jottings is a collection of small Java notes that I have written to learn new concepts and techniques.">
         <meta name="author" content="Omar Chaar">
@@ -12,14 +12,14 @@
         
         <!--Facebook Card-->
 		<meta property="og:type" content="article" />
-		<meta property="og:title"  content="Stacks" />
+		<meta property="og:title"  content="Iterator" />
 		<meta property="og:description" content="Java Jottings is a collection of small Java notes that I have written to learn new concepts and techniques."/>
 		<meta property="og:image" content="http://localhost:8820//img/yosemite.jpg" />
         
         <!--Twitter card -->
         
         <meta name="twitter:card" content="summary_large_image">
-		<meta name="twitter:title" content="Stacks">
+		<meta name="twitter:title" content="Iterator">
 		<meta name="twitter:creator" content="@omaarchaar">
 		<meta name="twitter:description" content="Java Jottings is a collection of small Java notes that I have written to learn new concepts and techniques.">
 		<meta name="twitter:image" content="http://localhost:8820//img/yosemite.jpg">
@@ -284,7 +284,7 @@
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                         <div class="post-heading">
-                            <h1>Stacks</h1>
+                            <h1>Iterator</h1>
                             
                             
                         </div>
@@ -297,32 +297,34 @@
         <article>
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><p>A stack is a linear data structure that follows the Last-In-First-Out (LIFO) principle. In other words, the last element added to the stack will be the first one to be removed.</p>
-<p>In Java, the <code>java.util.Stack</code> class is available to implement the stack data structure. It extends the <code>Vector</code> class and provides all the stack operations such as <code>push</code>, <code>pop</code>, <code>peek</code>, <code>search</code>, etc.</p>
-<h2>Creating a Stack in Java</h2>
-<p>To create a stack in Java, you can simply create an instance of the <code>java.util.Stack</code> class as follows:</p>
-<pre><code class="language-java">Stack&lt;Integer&gt; stack = new Stack&lt;&gt;();
+                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><p>The <code>Iterator</code> interface in Java provides a way to traverse through a collection of objects one by one. It is part of the <code>java.util</code> package and is commonly used in conjunction with the Collection framework. The Iterator interface defines three methods:</p>
+<ol>
+<li><code>boolean hasNext()</code>: returns true if there are more elements in the collection being iterated over.</li>
+<li><code>E next()</code>: returns the next element in the collection being iterated over.</li>
+<li><code>void remove()</code>: removes the last element returned by the iterator.</li>
+</ol>
+<p>Here is an example of how to use an Iterator to iterate over a List:</p>
+<pre><code class="language-java">import java.util.*;
+
+public class IteratorExample {
+    public static void main(String[] args) {
+        List&lt;String&gt; myList = new ArrayList&lt;String&gt;();
+        myList.add(&quot;apple&quot;);
+        myList.add(&quot;banana&quot;);
+        myList.add(&quot;cherry&quot;);
+
+        Iterator&lt;String&gt; iterator = myList.iterator();
+
+        while (iterator.hasNext()) {
+            String element = iterator.next();
+            System.out.println(element);
+        }
+    }
+}
+
 </code></pre>
-<p>Here, we have created a stack of integers using the generic <code>Stack</code> class. You can replace <code>Integer</code> with any other object type.</p>
-<h2>Stack Operations</h2>
-<p>The following are the main stack operations that can be performed using the <code>java.util.Stack</code> class:</p>
-<h3>Push</h3>
-<p>The <code>push</code> operation adds an element to the top of the stack. It can be done using the <code>push</code> method as follows:</p>
-<pre><code class="language-java">stack.push(10);
-</code></pre>
-<h3>Pop</h3>
-<p>The <code>pop</code> operation removes and returns the top element of the stack. It can be done using the <code>pop</code> method as follows:</p>
-<pre><code class="language-java">int topElement = stack.pop();
-</code></pre>
-<h3>Peek</h3>
-<p>The <code>peek</code> operation returns the top element of the stack without removing it. It can be done using the <code>peek</code> method as follows:</p>
-<pre><code class="language-java">int topElement = stack.peek();
-</code></pre>
-<h3>Search</h3>
-<p>The <code>search</code> operation searches for an element in the stack and returns its position. The position is calculated as the distance from the top of the stack. If the element is not present in the stack, it returns <code>-1</code>. It can be done using the <code>search</code> method as follows:</p>
-<pre><code class="language-java">int position = stack.search(10);
-</code></pre>
-<p>In conclusion, a stack is a useful data structure that can be easily implemented in Java using the <code>java.util.Stack</code> class. It provides all the necessary stack operations such as <code>push</code>, <code>pop</code>, <code>peek</code>, and <code>search</code>.</p>
+<p>The <code>hasNext()</code> method is called in the <code>while</code> loop to check if there are more elements in the List to iterate over. The <code>next()</code> method is called to retrieve the next element in the List and assign it to the <code>element</code> variable. Finally, the <code>remove()</code> method can be called to remove the last element returned by the Iterator.</p>
+<p>Iterators can also be used with other types of collections, such as Sets and Maps. In addition to the Iterator interface, Java also provides the <code>ListIterator</code> interface, which extends the Iterator interface to allow for bidirectional traversal of Lists.</p>
 </div>
                 </div>
             </div>

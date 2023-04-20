@@ -3,7 +3,7 @@
 
     <head>
         <meta charset="utf-8">
-        <title>Stacks</title>
+        <title>Arrays</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Java Jottings is a collection of small Java notes that I have written to learn new concepts and techniques.">
         <meta name="author" content="Omar Chaar">
@@ -12,14 +12,14 @@
         
         <!--Facebook Card-->
 		<meta property="og:type" content="article" />
-		<meta property="og:title"  content="Stacks" />
+		<meta property="og:title"  content="Arrays" />
 		<meta property="og:description" content="Java Jottings is a collection of small Java notes that I have written to learn new concepts and techniques."/>
 		<meta property="og:image" content="http://localhost:8820//img/yosemite.jpg" />
         
         <!--Twitter card -->
         
         <meta name="twitter:card" content="summary_large_image">
-		<meta name="twitter:title" content="Stacks">
+		<meta name="twitter:title" content="Arrays">
 		<meta name="twitter:creator" content="@omaarchaar">
 		<meta name="twitter:description" content="Java Jottings is a collection of small Java notes that I have written to learn new concepts and techniques.">
 		<meta name="twitter:image" content="http://localhost:8820//img/yosemite.jpg">
@@ -284,7 +284,7 @@
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                         <div class="post-heading">
-                            <h1>Stacks</h1>
+                            <h1>Arrays</h1>
                             
                             
                         </div>
@@ -297,32 +297,47 @@
         <article>
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><p>A stack is a linear data structure that follows the Last-In-First-Out (LIFO) principle. In other words, the last element added to the stack will be the first one to be removed.</p>
-<p>In Java, the <code>java.util.Stack</code> class is available to implement the stack data structure. It extends the <code>Vector</code> class and provides all the stack operations such as <code>push</code>, <code>pop</code>, <code>peek</code>, <code>search</code>, etc.</p>
-<h2>Creating a Stack in Java</h2>
-<p>To create a stack in Java, you can simply create an instance of the <code>java.util.Stack</code> class as follows:</p>
-<pre><code class="language-java">Stack&lt;Integer&gt; stack = new Stack&lt;&gt;();
+                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><p>The Arrays class contains various methods for manipulating arrays (such as sorting and searching). This class also contains a static factory that allows arrays to be viewed as lists.</p>
+<p>The methods in this class all throw a <code>NullPointerException</code>, if the specified array reference is null, except where noted.</p>
+<h2>Methods</h2>
+<p><code>java.util.Arrays</code> is a utility class in Java that provides various methods for working with arrays. Some of the commonly used methods of <code>java.util.Arrays</code> are:</p>
+<ol>
+<li><code>sort()</code>: Sorts the specified array into ascending order. This method uses a variant of the QuickSort algorithm.</li>
+<li><code>binarySearch()</code>: Searches the specified array for the specified value using the binary search algorithm. The array must be sorted in ascending order prior to making this call.</li>
+<li><code>toString()</code>: Returns a string representation of the contents of the specified array.</li>
+<li><code>fill()</code>: Assigns the specified value to each element of the specified array.</li>
+<li><code>copyOf()</code>: Copies the specified array, truncating or padding with zeros (if necessary) so the copy has the specified length.</li>
+<li><code>asList()</code>: Returns a fixed-size list backed by the specified array.</li>
+</ol>
+<p>Using these methods provided by <code>java.util.Arrays</code>, it becomes easier and more efficient to work with arrays in Java. The <code>sort()</code> and <code>binarySearch()</code> methods, in particular, can be very useful when working with large arrays that need to be sorted or searched.</p>
+<p>Some more detailed methods provided by <code>java.util.Arrays</code>:</p>
+<h3>1. <code>equals()</code></h3>
+<p>The <code>equals()</code> method in <code>java.util.Arrays</code> is used to compare two arrays for equality. The method takes two arrays as arguments and returns <code>true</code> if the arrays contain the same elements in the same order.</p>
+<pre><code class="language-java">int[] arr1 = {1, 2, 3};
+int[] arr2 = {1, 2, 3};
+
+boolean isEqual = Arrays.equals(arr1, arr2); // returns true
 </code></pre>
-<p>Here, we have created a stack of integers using the generic <code>Stack</code> class. You can replace <code>Integer</code> with any other object type.</p>
-<h2>Stack Operations</h2>
-<p>The following are the main stack operations that can be performed using the <code>java.util.Stack</code> class:</p>
-<h3>Push</h3>
-<p>The <code>push</code> operation adds an element to the top of the stack. It can be done using the <code>push</code> method as follows:</p>
-<pre><code class="language-java">stack.push(10);
+<h3>2. <code>fill()</code></h3>
+<p>The <code>fill()</code> method in <code>java.util.Arrays</code> is used to fill an array with a specified value. The method takes an array and a value as arguments and sets each element in the array to the specified value.</p>
+<pre><code class="language-java">int[] arr = new int[5];
+Arrays.fill(arr, 10); // sets each element in the array to 10
 </code></pre>
-<h3>Pop</h3>
-<p>The <code>pop</code> operation removes and returns the top element of the stack. It can be done using the <code>pop</code> method as follows:</p>
-<pre><code class="language-java">int topElement = stack.pop();
+<h3>3. <code>sort()</code></h3>
+<p>The <code>sort()</code> method in <code>java.util.Arrays</code> is used to sort an array in ascending order. The method takes an array as an argument and uses the natural ordering of the elements to sort the array.</p>
+<pre><code class="language-java">int[] arr = {3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5};
+Arrays.sort(arr); // sorts the array in ascending order
 </code></pre>
-<h3>Peek</h3>
-<p>The <code>peek</code> operation returns the top element of the stack without removing it. It can be done using the <code>peek</code> method as follows:</p>
-<pre><code class="language-java">int topElement = stack.peek();
+<h3>4. <code>binarySearch()</code></h3>
+<p>The <code>binarySearch()</code> method in <code>java.util.Arrays</code> is used to search for a specified element in a sorted array. The method takes an array and a key value as arguments and returns the index of the key value in the array.</p>
+<pre><code class="language-java">int[] arr = {1, 2, 3, 4, 5};
+int index = Arrays.binarySearch(arr, 3); // returns 2
 </code></pre>
-<h3>Search</h3>
-<p>The <code>search</code> operation searches for an element in the stack and returns its position. The position is calculated as the distance from the top of the stack. If the element is not present in the stack, it returns <code>-1</code>. It can be done using the <code>search</code> method as follows:</p>
-<pre><code class="language-java">int position = stack.search(10);
+<h3>5. <code>copyOf()</code></h3>
+<p>The <code>copyOf()</code> method in <code>java.util.Arrays</code> is used to create a copy of an array with a specified length. The method takes an array and a length as arguments and returns a new array with the specified length.</p>
+<pre><code class="language-java">int[] arr1 = {1, 2, 3};
+int[] arr2 = Arrays.copyOf(arr1, 5); // returns {1, 2, 3, 0, 0}
 </code></pre>
-<p>In conclusion, a stack is a useful data structure that can be easily implemented in Java using the <code>java.util.Stack</code> class. It provides all the necessary stack operations such as <code>push</code>, <code>pop</code>, <code>peek</code>, and <code>search</code>.</p>
 </div>
                 </div>
             </div>
