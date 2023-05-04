@@ -3,7 +3,7 @@
 
     <head>
         <meta charset="utf-8">
-        <title>Using File APIs</title>
+        <title>What is Unit Testing?</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Java Jottings is a collection of small Java notes that I have written to learn new concepts and techniques.">
         <meta name="author" content="Omar Chaar">
@@ -12,14 +12,14 @@
         
         <!--Facebook Card-->
 		<meta property="og:type" content="article" />
-		<meta property="og:title"  content="Using File APIs" />
+		<meta property="og:title"  content="What is Unit Testing?" />
 		<meta property="og:description" content="Java Jottings is a collection of small Java notes that I have written to learn new concepts and techniques."/>
 		<meta property="og:image" content="http://localhost:8820//img/yosemite.jpg" />
         
         <!--Twitter card -->
         
         <meta name="twitter:card" content="summary_large_image">
-		<meta name="twitter:title" content="Using File APIs">
+		<meta name="twitter:title" content="What is Unit Testing?">
 		<meta name="twitter:creator" content="@omaarchaar">
 		<meta name="twitter:description" content="Java Jottings is a collection of small Java notes that I have written to learn new concepts and techniques.">
 		<meta name="twitter:image" content="http://localhost:8820//img/yosemite.jpg">
@@ -365,7 +365,7 @@
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                         <div class="post-heading">
-                            <h1>Using File APIs</h1>
+                            <h1>What is Unit Testing?</h1>
                             
                             
                         </div>
@@ -378,119 +378,20 @@
         <article>
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><p>The Java Files API provides a set of classes and methods that allow Java programs to interact with the file system. It allows you to perform common file operations such as reading, writing, and deleting files.</p>
-<h3><code>java.io.File</code> vs <code>java.nio.file.Path</code></h3>
-<p>Java has two file APIs.<br />
-- The original <code>java.io.File</code> API, available since Java 1.0 (1996).<br />
-- The newer <code>java.nio.file.Path</code> API, available since Java 1.7 (2011).</p>
-<h2>File vs Path API</h2>
-<p>Nevertheless, <code>java.nio.file.Path</code> does everything <code>java.io.File</code> can, but generally in a better way and more. A few examples:<br />
-- File Features: The new classes support symlinks, proper file attributes and metadata support (think: PosixFileAttributes), ACLs and more.<br />
-- Better usage: E.g. when deleting a file, you get an exception with a meaningful error message (no such file, file locked, etc.), instead of a simple boolean saying <code>false</code>.<br />
-- Decoupling: Enabling support for in-memory file systems, which we’ll cover later.</p>
-<h3>Reading Files</h3>
-<p>To read the contents of a file in Java, you can use the <code>java.nio.file.Files</code> class, which provides a number of static methods for working with files. The most common method for reading a file is <code>readAllLines</code>, which reads all the lines in a file and returns them as a list of strings:</p>
-<pre><code class="language-java">import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.List;
-
-public class ReadFileExample {
-    public static void main(String[] args) throws Exception {
-        List&lt;String&gt; lines = Files.readAllLines(Paths.get(&quot;folder\\file.txt&quot;));
-        for (String line : lines) {
-            System.out.println(line);
-        }
-    }
-}
-</code></pre>
-<h3>Writing Files</h3>
-<p>To write to a file in Java, you can use the <code>java.nio.file.Files</code> class again, this time with the <code>write</code> method:</p>
-<pre><code class="language-java">import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
-
-public class WriteFileExample {
-    public static void main(String[] args) throws Exception {
-        String text = &quot;Hello, world!&quot;;
-        Files.write(Paths.get(&quot;folder\\file.txt&quot;), text.getBytes(), StandardOpenOption.CREATE);
-    }
-}
-</code></pre>
-<h3>Deleting Files and Directories</h3>
-<p>To delete a file in Java, you can use the <code>java.nio.file.Files</code> class with the <code>delete</code> method:</p>
-<pre><code class="language-java">import java.nio.file.Files;
-import java.nio.file.Paths;
-
-public class DeleteFileExample {
-    public static void main(String[] args) throws Exception {
-        Files.delete(Paths.get(&quot;folder\\file.txt&quot;));
-    }
-}
-</code></pre>
-<p>To delete a directory, you can use the <code>java.nio.file.Files</code> class again, this time with the <code>delete</code> method and a directory path:</p>
-<pre><code class="language-java">import java.nio.file.Files;
-import java.nio.file.Paths;
-
-public class DeleteDirectoryExample {
-    public static void main(String[] args) throws Exception {
-        Files.delete(Paths.get(&quot;folder&quot;));
-    }
-}
-</code></pre>
-<h3>Manipulating Paths</h3>
-<p>When working with files and directories, you often need to manipulate paths. Java provides the <code>java.nio.file.Path</code> interface for working with paths. You can create a path using the <code>Paths.get</code> method:</p>
-<pre><code class="language-java">import java.nio.file.Path;
-import java.nio.file.Paths;
-
-public class PathExample {
-    public static void main(String[] args) throws Exception {
-        Path path = Paths.get(&quot;directory&quot;, &quot;file.txt&quot;);
-        System.out.println(path.toString());
-    }
-}
-</code></pre>
-<h3>Best Practices</h3>
-<p>When working with files in Java, it is important to properly handle exceptions and close files when you are done with them. It is also a good practice to use try-with-resources statements to automatically close files, and to use appropriate file permissions to ensure the security of your files.</p>
-<h2>Full Sample Code</h2>
-<p>The code bellow used try catch as best practices</p>
-<pre><code class="language-java">import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
-import java.util.List; 
-
-public class App {
-    public static void main(String[] args) throws Exception {
-        //Writing files 
-		String text = &quot;This is a test&quot;;
-        try{
-            Files.write(Paths.get(&quot;file.txt&quot;), text.getBytes(), StandardOpenOption.CREATE);
-            System.out.println(&quot;File wrote successfully&quot;);
-        } catch (IOException exception){
-            System.out.println(&quot;it wasn't possible to write the file&quot;);
-        }
-        
-        //Reading files
-        try{
-            List&lt;String&gt; textRead = Files.readAllLines(Paths.get(&quot;file.txt&quot;));
-            for(String line: textRead)
-                System.out.println(line);
-		} catch (IOException exception){
-            System.out.println(&quot;it wasn't possible to read the file&quot;);
-        } 
-        //Manipulating Paths
-        Path path = Paths.get(&quot;.&quot;,&quot;file.txt&quot;);
-        
-        //Deleting
-        try{
-	        Files.delete(path);
-        }catch (IOException exception){
-            System.out.println(&quot;it wasn't possible to delete the file&quot;);
-        }     
-	}
-}
-</code></pre>
+                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><p>Through unit testing, we can define the intended behavior of the code and validate that it indeed performs as expected. Unit testing has evolved to become a fascinating junction of design, programming, and debugging.</p>
+<p>Unit testing involves writing test code to verify the functionality of other code units. Although the size of a unit is not precisely defined, we can consider a unit to be a small code segment that performs a useful action in our system. Typically, a unit alone does not represent a complete end-to-end behavior, but rather a small portion of it.</p>
+<h2>Scenarios where JUnit and unit testing is used</h2>
+<ul>
+<li>After implementing a new feature, we write unit tests to verify its expected behavior.</li>
+<li>To document changes made in the system and help other developers understand the rationale behind the implementation, we write unit tests.</li>
+<li>Before making changes to the existing code, we write unit tests to ensure that the upcoming modifications don't break the existing behavior.</li>
+<li>We write unit tests to understand the current behavior of the system.</li>
+<li>We also write unit tests to identify when third-party code stops working as intended.</li>
+</ul>
+<h2>Benefits of Unit testing</h2>
+<p>Learning how to implement unit testing can improve considerably the quality of the code we produce. Not only that, as programmers it will increase our range of skills.</p>
+<p><code></code>If we approach unit testing with an open mind, it might even change the way we build code.`</p>
+<p>In addition, unit testing increases the confidence in our code, even though we still need integration and/or acceptance tests to verify end-to-end behaviour.</p>
 </div>
                 </div>
             </div>

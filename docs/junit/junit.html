@@ -3,7 +3,7 @@
 
     <head>
         <meta charset="utf-8">
-        <title>Using File APIs</title>
+        <title>JUnit</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Java Jottings is a collection of small Java notes that I have written to learn new concepts and techniques.">
         <meta name="author" content="Omar Chaar">
@@ -12,14 +12,14 @@
         
         <!--Facebook Card-->
 		<meta property="og:type" content="article" />
-		<meta property="og:title"  content="Using File APIs" />
+		<meta property="og:title"  content="JUnit" />
 		<meta property="og:description" content="Java Jottings is a collection of small Java notes that I have written to learn new concepts and techniques."/>
 		<meta property="og:image" content="http://localhost:8820//img/yosemite.jpg" />
         
         <!--Twitter card -->
         
         <meta name="twitter:card" content="summary_large_image">
-		<meta name="twitter:title" content="Using File APIs">
+		<meta name="twitter:title" content="JUnit">
 		<meta name="twitter:creator" content="@omaarchaar">
 		<meta name="twitter:description" content="Java Jottings is a collection of small Java notes that I have written to learn new concepts and techniques.">
 		<meta name="twitter:image" content="http://localhost:8820//img/yosemite.jpg">
@@ -365,7 +365,7 @@
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                         <div class="post-heading">
-                            <h1>Using File APIs</h1>
+                            <h1>JUnit</h1>
                             
                             
                         </div>
@@ -378,119 +378,109 @@
         <article>
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><p>The Java Files API provides a set of classes and methods that allow Java programs to interact with the file system. It allows you to perform common file operations such as reading, writing, and deleting files.</p>
-<h3><code>java.io.File</code> vs <code>java.nio.file.Path</code></h3>
-<p>Java has two file APIs.<br />
-- The original <code>java.io.File</code> API, available since Java 1.0 (1996).<br />
-- The newer <code>java.nio.file.Path</code> API, available since Java 1.7 (2011).</p>
-<h2>File vs Path API</h2>
-<p>Nevertheless, <code>java.nio.file.Path</code> does everything <code>java.io.File</code> can, but generally in a better way and more. A few examples:<br />
-- File Features: The new classes support symlinks, proper file attributes and metadata support (think: PosixFileAttributes), ACLs and more.<br />
-- Better usage: E.g. when deleting a file, you get an exception with a meaningful error message (no such file, file locked, etc.), instead of a simple boolean saying <code>false</code>.<br />
-- Decoupling: Enabling support for in-memory file systems, which we’ll cover later.</p>
-<h3>Reading Files</h3>
-<p>To read the contents of a file in Java, you can use the <code>java.nio.file.Files</code> class, which provides a number of static methods for working with files. The most common method for reading a file is <code>readAllLines</code>, which reads all the lines in a file and returns them as a list of strings:</p>
-<pre><code class="language-java">import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.List;
-
-public class ReadFileExample {
-    public static void main(String[] args) throws Exception {
-        List&lt;String&gt; lines = Files.readAllLines(Paths.get(&quot;folder\\file.txt&quot;));
-        for (String line : lines) {
-            System.out.println(line);
-        }
+                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><p>JUnit is a unit testing framework for the Java programming language that has been instrumental in the evolution of test-driven development (TDD). In this guide, we will cover the basics of writing JUnit tests and understanding its various parts.</p>
+<h2>Understanding the JUnit Test Bits</h2>
+<p>When writing JUnit tests, there are a few important things to keep in mind:</p>
+<ul>
+<li>The <code>@Test</code> annotation from <code>org.junit.Assert</code> is used to mark a method as a test, and JUnit knows to execute it as such. Other methods in the test class that are not marked with this annotation will not be executed.</li>
+<li>The <code>fail()</code> static method comes from the same <code>org.junit.Assert</code> class and is used to intentionally fail a test. This can be helpful in cases where we want to make sure a certain condition is not met.</li>
+<li>Test classes are usually named by appending &quot;Test&quot; to the name of the class being tested. For example, if we are testing a class named <code>ScoreCollection</code>, we might name our test class <code>ScoreCollectionTest</code>.</li>
+</ul>
+<h2>Ready-to-Run Template Test</h2>
+<p>Here is a ready-to-run template test that you can use as a starting point for your own tests.</p>
+<pre><code class="language-java">public class ScoreCollectionTest {
+    
+    @Test
+    public void test() {
+        fail(&quot;Not yet implemented&quot;);
     }
+    
 }
 </code></pre>
-<h3>Writing Files</h3>
-<p>To write to a file in Java, you can use the <code>java.nio.file.Files</code> class again, this time with the <code>write</code> method:</p>
-<pre><code class="language-java">import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
+<p>As you can see, this test intentionally fails with the message &quot;Not yet implemented&quot;. This can be a useful starting point for writing your own tests.</p>
+<h3>Important Design Feature</h3>
+<p>Before we dive into our test, it's important to understand two critical design features of JUnit:</p>
+<ol>
+<li>When JUnit calls a test method, it executes statements from top to bottom.</li>
+<li>If JUnit runs through to the end of the test method without encountering an explicit <code>fail()</code> or an assertion that fails, the test passes.</li>
+</ol>
+<h2>A Passing test</h2>
+<pre><code class="language-java">//Scoreable.java
+package testingpackage;  
 
-public class WriteFileExample {
-    public static void main(String[] args) throws Exception {
-        String text = &quot;Hello, world!&quot;;
-        Files.write(Paths.get(&quot;folder\\file.txt&quot;), text.getBytes(), StandardOpenOption.CREATE);
-    }
+@FunctionalInterface
+public interface Scoreable {
+   int getScore();
 }
 </code></pre>
-<h3>Deleting Files and Directories</h3>
-<p>To delete a file in Java, you can use the <code>java.nio.file.Files</code> class with the <code>delete</code> method:</p>
-<pre><code class="language-java">import java.nio.file.Files;
-import java.nio.file.Paths;
+<pre><code class="language-java">//ScoreCollection.java
+package testingpackage;
+import java.util.*;
 
-public class DeleteFileExample {
-    public static void main(String[] args) throws Exception {
-        Files.delete(Paths.get(&quot;folder\\file.txt&quot;));
-    }
-}
-</code></pre>
-<p>To delete a directory, you can use the <code>java.nio.file.Files</code> class again, this time with the <code>delete</code> method and a directory path:</p>
-<pre><code class="language-java">import java.nio.file.Files;
-import java.nio.file.Paths;
+public class ScoreCollection {
+   private List&lt;Scoreable&gt; scores = new ArrayList&lt;&gt;();
+   public void add(Scoreable scoreable) {
+      scores.add(scoreable);
+   }
 
-public class DeleteDirectoryExample {
-    public static void main(String[] args) throws Exception {
-        Files.delete(Paths.get(&quot;folder&quot;));
-    }
+   public int arithmeticMean() {
+      int total = scores.stream().mapToInt(Scoreable::getScore).sum();
+      return total / scores.size();
+   }
 }
 </code></pre>
-<h3>Manipulating Paths</h3>
-<p>When working with files and directories, you often need to manipulate paths. Java provides the <code>java.nio.file.Path</code> interface for working with paths. You can create a path using the <code>Paths.get</code> method:</p>
-<pre><code class="language-java">import java.nio.file.Path;
-import java.nio.file.Paths;
+<p>As you can see, <code>ScoreCollection</code> accepts a <code>Scoreable</code> instance through its <code>add()</code> method. A <code>Scoreable</code> object is simply one that can return an <code>int</code> score value.</p>
+<pre><code class="language-java">//ScoreCollectionTest.java
+package testingpackage;
+import static org.junit.Assert.*;
+import org.junit.*;
 
-public class PathExample {
-    public static void main(String[] args) throws Exception {
-        Path path = Paths.get(&quot;directory&quot;, &quot;file.txt&quot;);
-        System.out.println(path.toString());
-    }
+public class ScoreCollectionTest {
+    @Test
+    public void test() {
+    }
 }
 </code></pre>
-<h3>Best Practices</h3>
-<p>When working with files in Java, it is important to properly handle exceptions and close files when you are done with them. It is also a good practice to use try-with-resources statements to automatically close files, and to use appropriate file permissions to ensure the security of your files.</p>
-<h2>Full Sample Code</h2>
-<p>The code bellow used try catch as best practices</p>
-<pre><code class="language-java">import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
-import java.util.List; 
+<p>The way that JUnit works is that the code above will be always a Passing Test since there is no call of the <code>fail()</code> method.</p>
+<h2>Arrange, Act, and Assert Your Way to a Test</h2>
+<pre><code class="language-java">//We are testing ScoreCollection.java from above  
 
-public class App {
-    public static void main(String[] args) throws Exception {
-        //Writing files 
-		String text = &quot;This is a test&quot;;
-        try{
-            Files.write(Paths.get(&quot;file.txt&quot;), text.getBytes(), StandardOpenOption.CREATE);
-            System.out.println(&quot;File wrote successfully&quot;);
-        } catch (IOException exception){
-            System.out.println(&quot;it wasn't possible to write the file&quot;);
-        }
-        
-        //Reading files
-        try{
-            List&lt;String&gt; textRead = Files.readAllLines(Paths.get(&quot;file.txt&quot;));
-            for(String line: textRead)
-                System.out.println(line);
-		} catch (IOException exception){
-            System.out.println(&quot;it wasn't possible to read the file&quot;);
-        } 
-        //Manipulating Paths
-        Path path = Paths.get(&quot;.&quot;,&quot;file.txt&quot;);
-        
-        //Deleting
-        try{
-	        Files.delete(path);
-        }catch (IOException exception){
-            System.out.println(&quot;it wasn't possible to delete the file&quot;);
-        }     
-	}
+package testingpackage;
+import static org.junit.Assert.*;
+import static org.hamcrest.CoreMatchers.*;
+import org.junit.*;
+
+  
+
+public class ScoreCollectionTest {
+
+   @Test
+   public void answersArithmeticMeanOfTwoNumbers() {
+      // Arrange
+      ScoreCollection collection = new ScoreCollection();
+      collection.add(() -&gt; 5);
+      collection.add(() -&gt; 7);
+      
+      // Act
+      int actualResult = collection.arithmeticMean();
+      
+      // Assert
+      assertThat(actualResult, equalTo(6));
+
+   }
+
 }
 </code></pre>
+<h2>Arrange</h2>
+<p>To do anything in a test, we first need to arrange the elements of the code that set up the state in a test. In our example, we create a <code>ScoreCollection</code> instance and then call the <code>add()</code> method with <code>Scoreable</code> implementations.</p>
+<p>We can create a new <code>Scoreable</code> object by using a lambda expression that returns the same value that we want the <code>Scoreable</code> instance to return, like <code>() -&gt; 5</code>.</p>
+<h2>Act</h2>
+<p>After we have arranged the test, we have to execute the <code>arithmeticMean()</code> method code we're trying to verify.</p>
+<h2>Assert</h2>
+<p>Finally, we must assert that we got the expected result. We use the <code>assertThat()</code> method, which takes two arguments: the actual result and a matcher. The <code>equalTo</code> matcher compares the actual result to the expected value of 6. JUnit passes the test if the matcher returns true; otherwise, it fails the test.</p>
+<p>To use the <code>equalTo</code> matcher, make sure to use a static import for <code>org.hamcrest.CoreMatchers.*</code>.</p>
+<h2>Test-driven development</h2>
+<p>Test-driven development is a vital practice that involves writing tests to ensure that the code works as expected. It's crucial to ensure that the tests fail initially to avoid false assumptions. Programmers who follow TDD always demonstrate test failure first, which proves that their code is responsible for making the test pass.</p>
 </div>
                 </div>
             </div>
