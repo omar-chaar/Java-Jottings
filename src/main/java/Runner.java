@@ -1,4 +1,3 @@
-import org.jbake.app.JBakeException;
 import org.jbake.app.Oven;
 
 public class Runner {
@@ -9,11 +8,7 @@ public class Runner {
     }
 
     public void run() {
-        try {
-            oven.setupPaths();
-            oven.bake();
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
+        oven.setupPaths();
+        oven.bake();
     }
 }
