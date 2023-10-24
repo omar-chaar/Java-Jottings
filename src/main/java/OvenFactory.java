@@ -1,4 +1,5 @@
 import org.jbake.app.Oven;
+import org.jbake.app.configuration.JBakeConfigurationFactory;
 
 import java.io.File;
 
@@ -12,7 +13,6 @@ public class OvenFactory {
     }
 
     public static Oven createOven(File source, File destination, boolean isClearCache) throws Exception {
-        return new Oven(source, destination, isClearCache);
+        return new Oven(new JBakeConfigurationFactory().createDefaultJbakeConfiguration(source, destination, isClearCache));
     }
-
 }
