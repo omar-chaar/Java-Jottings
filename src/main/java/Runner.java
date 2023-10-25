@@ -8,7 +8,6 @@ public class Runner {
     }
 
     public void run() {
-        oven.setupPaths();
         oven.bake();
     }
 }

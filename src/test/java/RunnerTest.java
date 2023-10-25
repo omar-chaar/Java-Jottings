@@ -16,12 +16,6 @@ class RunnerTest {
     }
 
     @Test
-    public void whenRunIsCalledThenSetupPathsIsCalled() {
-        runner.run();
-        verify(oven).setupPaths();
-    }
-
-    @Test
     public void whenRunIsCalledThenBakeIsCalled() {
         runner.run();
         verify(oven).bake();
