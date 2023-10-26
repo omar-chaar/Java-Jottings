@@ -1,3 +1,5 @@
+package tech.omarchaar.java_jottings;
+
 import org.jbake.app.Oven;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

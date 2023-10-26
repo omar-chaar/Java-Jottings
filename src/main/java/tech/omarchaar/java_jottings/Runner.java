@@ -1,3 +1,5 @@
+package tech.omarchaar.java_jottings;
+
 import org.jbake.app.Oven;
 
 public class Runner {
